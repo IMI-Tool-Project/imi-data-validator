@@ -1,0 +1,4428 @@
+﻿#prefix ic: "http://imi.go.jp/ns/core/2#"
+#prefix xsd: "http://www.w3.org/2001/XMLSchema#"
+
+#prefix uncefactISO4217: "urn:un:unece:uncefact:codelist:standard:ISO:ISO3AlphaCurrencyCode:2012-08-31#"
+#prefix uncefactCode:	"urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCode:9#"
+#prefix uncefactDuration: "urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeDuration:4#"
+#prefix uncefactLinear:	"urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeLinear:4#"
+#prefix uncefactVolume:	"urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeVolume:4#"
+#prefix uncefactWeight:	"urn:un:unece:uncefact:codelist:standard:UNECE:MeasurementUnitCommonCodeWeight:4#"
+
+#name "共通語彙基盤コア語彙"
+#name@en "IMI Core Vocabulary"
+# "コア語彙は、共通語彙基盤の基礎をなすもので、氏名、住所、組織等、あらゆる社会活動で使用される中核的な用語の集合です。多くのシステム間で情報交換のための基礎となる語彙で、データ交換、オープンデータの二次利用等の効率化に役立つものです。"
+#description@en "IMI Core Vocabulary"
+#created_date "2017-11-10"
+#creator[1] "経済産業省"
+#creator_ref[1] "http://www.meti.go.jp/"
+#creator[1]@en "Ministry of Economy, Trade and Industry"
+#creator[2] "IPA 独立行政法人情報処理推進機構"
+#creator_ref[2] "http://www.ipa.go.jp/"
+#creator[2]@en "Information-technology Promotion Agency, Japan."
+#publisher "IPA 独立行政法人情報処理推進機構"
+#publisher@en "Information-technology Promotion Agency, Japan."
+#published_date "2017-11-10"
+#version "2.4.1"
+#license "CC0"
+#license_ref "http://creativecommons.org/publicdomain/zero/1.0/"
+vocabulary "http://imi.go.jp/ns/core/2#" ;
+
+
+#name "人型"
+# "人の情報を表現するためのクラス用語"
+#name@en "Person"
+#description@en "A class term to express information of a person."
+class ic:人型 {@ic:実体型} ;
+
+
+#name "氏名"
+# "氏名を記述するためのプロパティ用語"
+#description@en "A name of the person."
+set ic:人型>ic:氏名 {0..n} ;
+
+
+#name "性別"
+# "性別の表記を記述するためのプロパティ用語"
+#description@en "The gender expressed as text."
+set ic:人型>ic:性別 {0..1} ;
+
+
+#name "性別コード"
+# "性別コードを記述するためのプロパティ用語"
+#description@en "The code specifying gender."
+set ic:人型>ic:性別コード {0..1} ;
+
+
+#name "生年月日"
+# "生年月日を記述するためのプロパティ用語"
+#description@en "The date of birth."
+set ic:人型>ic:生年月日 {0..1} ;
+
+
+#name "死亡年月日"
+# "死亡年月日を記述するためのプロパティ用語"
+#description@en "The date of death."
+set ic:人型>ic:死亡年月日 {0..1} ;
+
+
+#name "住所"
+# "現住所を記述するためのプロパティ用語"
+#description@en "A present address."
+set ic:人型>ic:住所 {0..n} ;
+
+
+#name "本籍"
+# "本籍を記述するためのプロパティ用語"
+#description@en "The registered domicile by birth."
+set ic:人型>ic:本籍 {0..1} ;
+
+
+#name "連絡先"
+# "連絡先を記述するためのプロパティ用語"
+#description@en "A contact."
+set ic:人型>ic:連絡先 {0..n} ;
+
+
+#name "国籍"
+# "国籍の表記を記述するためのプロパティ用語"
+#description@en "A nationality expressed as text."
+set ic:人型>ic:国籍 {0..n} ;
+
+
+#name "国籍コード"
+# "国籍コードを記述するためのプロパティ用語　※住民基本台帳で利用されているものを使用"
+#description@en "A code specifying the nationality. Note: Use the code in Basic Resident Registration."
+set ic:人型>ic:国籍コード {0..n} ;
+
+
+#name "出生国"
+# "生まれた国名を記述するためのプロパティ用語"
+#description@en "The name of the country of birth."
+set ic:人型>ic:出生国 {0..1} ;
+
+
+#name "出生国コード"
+# "生まれた国のコードを記述するためのプロパティ用語"
+#description@en "The code specifying the country of birth."
+set ic:人型>ic:出生国コード {0..1} ;
+
+
+#name "出生地"
+# "生まれた場所を記述するためのプロパティ用語"
+#description@en "The place of birth."
+set ic:人型>ic:出生地 {0..1} ;
+
+
+#name "年齢"
+# "人の年齢を記述するためのプロパティ用語"
+#description@en "An age of the person."
+set ic:人型>ic:年齢 {0..1} ;
+
+
+#name "身長"
+# "人の身長を記述するためのプロパティ用語"
+#description@en "A height of the person."
+set ic:人型>ic:身長 {0..1} ;
+
+
+#name "体重"
+# "人の体重を記述するためのプロパティ用語"
+#description@en "A weight of the person."
+set ic:人型>ic:体重 {0..1} ;
+
+
+#name "名称型"
+# "組織や地物等の名称を表現するためのクラス用語"
+#name@en "Name"
+#description@en "A class term to express names of an organization or feature."
+class ic:名称型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "名称の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The category of the name expressed as text."
+* set ic:名称型>ic:種別 {0..1} ;
+***/
+
+
+#name "カナ表記"
+# "カタカナ表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the name in Katakana."
+set ic:名称型>ic:カナ表記 {0..1} ;
+
+
+#name "ローマ字表記"
+# "ローマ字表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the name in the Roman alphabet."
+set ic:名称型>ic:ローマ字表記 {0..1} ;
+
+
+#name "氏名型"
+# "人の氏名を表現するためのクラス用語"
+#name@en "Name of person"
+#description@en "A class term to express the name of a person."
+class ic:氏名型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "氏名の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The category of the name expressed as text."
+* set ic:氏名型>ic:種別 {0..1} ;
+***/
+
+
+#name "姓名"
+# "氏名（姓、名）の表記を記述するためのプロパティ用語"
+#description@en "The full name (family and given name) expressed as text."
+set ic:氏名型>ic:姓名 {0..1} ;
+
+
+#name "姓名カナ表記"
+# "氏名（姓、名）のカタカナ表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the full name (family and given name) in Katakana."
+set ic:氏名型>ic:姓名カナ表記 {0..1} ;
+
+
+#name "姓名ローマ字表記"
+# "氏名（姓、名）のローマ字表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the full name (family and given name) in the Roman alphabet."
+set ic:氏名型>ic:姓名ローマ字表記 {0..1} ;
+
+
+#name "姓"
+# "姓の表記を記述するためのプロパティ用語"
+#description@en "The family name expressed as text."
+set ic:氏名型>ic:姓 {0..1} ;
+
+
+#name "姓カナ表記"
+# "姓のカタカナ表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the family name in Katakana."
+set ic:氏名型>ic:姓カナ表記 {0..1} ;
+
+
+#name "姓ローマ字表記"
+# "姓のローマ字表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the family name in the Roman alphabet."
+set ic:氏名型>ic:姓ローマ字表記 {0..1} ;
+
+
+#name "名"
+# "名の表記を記述するためのプロパティ用語"
+#description@en "The given name expressed as text."
+set ic:氏名型>ic:名 {0..1} ;
+
+
+#name "名カナ表記"
+# "名のカタカナ表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the given name in Katakana."
+set ic:氏名型>ic:名カナ表記 {0..1} ;
+
+
+#name "名ローマ字表記"
+# "名のローマ字表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the given name in the Roman alphabet."
+set ic:氏名型>ic:名ローマ字表記 {0..1} ;
+
+
+#name "ミドルネーム"
+# "ミドルネームの表記を記述するためのプロパティ用語"
+#description@en "The middle name expressed as text."
+set ic:氏名型>ic:ミドルネーム {0..1} ;
+
+
+#name "ミドルネームカナ表記"
+# "ミドルネームのカタカナ表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the middle name in Katakana."
+set ic:氏名型>ic:ミドルネームカナ表記 {0..1} ;
+
+
+#name "ミドルネームローマ字表記"
+# "ミドルネームのローマ字表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the middle name in the Roman alphabet."
+set ic:氏名型>ic:ミドルネームローマ字表記 {0..1} ;
+
+
+#name "住所型"
+# "住所を表現するためのクラス用語"
+#name@en "Address"
+#description@en "A class term to express an address."
+class ic:住所型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "住所の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The category of the address expressed as text."
+* set ic:住所型>ic:種別 {0..1} ;
+***/
+
+
+#name "郵便番号"
+# "郵便番号を記述するためのプロパティ用語　※0-9の数字7桁"
+#description@en "The postal code. Note: A string consisting of seven numeric characters of '0 to 9'."
+set ic:住所型>ic:郵便番号 {0..1} ;
+
+
+#name "住所コード"
+# "住所のコードを記述するためのプロパティ用語　※地方公共団体情報システム機構の地方公共団体コード住所など"
+#description@en "A code specifying the address. Note: Such as Local Government Code Address by Japan Agency for Local Authority Information Systems."
+set ic:住所型>ic:住所コード {0..n} ;
+
+
+#name "国"
+# "国名を記述するためのプロパティ用語"
+#description@en "The country name."
+set ic:住所型>ic:国 {0..1} ;
+
+
+#name "国コード"
+# "国のコードを記述するためのプロパティ用語"
+#description@en "The code specifying the country."
+set ic:住所型>ic:国コード {0..1} ;
+
+
+#name "都道府県"
+# "都道府県名を記述するためのプロパティ用語"
+#description@en "The prefecture name."
+set ic:住所型>ic:都道府県 {0..1} ;
+
+
+#name "都道府県コード"
+# "都道府県のコードを記述するためのプロパティ用語"
+#description@en "The code specifying the prefecture."
+set ic:住所型>ic:都道府県コード {0..1} ;
+
+
+#name "市区町村"
+# "市区町村名を記述するためのプロパティ用語"
+#description@en "The municipality name."
+set ic:住所型>ic:市区町村 {0..1} ;
+
+
+#name "区"
+# "政令指定都市の区の名前を記述するためのプロパティ用語"
+#description@en "The name of the ward in the ordinance-designated city."
+set ic:住所型>ic:区 {0..1} ;
+
+
+#name "市区町村コード"
+# "市区町村のコードを記述するためのプロパティ用語"
+#description@en "The code specifying the municipality."
+set ic:住所型>ic:市区町村コード {0..1} ;
+
+
+#name "町名"
+# "町域、または市区町村の下の行政区分の表記を記述するためのプロパティ用語"
+#description@en "The town area or administrative division under municipality expressed as text."
+set ic:住所型>ic:町名 {0..1} ;
+
+
+#name "丁目"
+# "丁目の表記を記述するためのプロパティ用語"
+#description@en "The city district number expressed as text."
+set ic:住所型>ic:丁目 {0..1} ;
+
+
+#name "番地補足"
+# "番地の前の、「東」「北」「浜」「甲」「イ」などの文字を記述するためのプロパティ用語"
+#description@en "The prefix string such as '東 (East)' , '北 (North)',  '浜 (Coast)', '甲' and 'イ' (characters representing item number) specified prior to a block number."
+set ic:住所型>ic:番地補足 {0..1} ;
+
+
+#name "番地"
+# "番、街区の表記を記述するためのプロパティ用語"
+#description@en "The block number or town block number expressed as text."
+set ic:住所型>ic:番地 {0..1} ;
+
+
+#name "号"
+# "号、住居番号の表記を記述するためのプロパティ用語"
+#description@en "The building number or house number expressed as text."
+set ic:住所型>ic:号 {0..1} ;
+
+
+#name "ビル名"
+# "ビル名を記述するためのプロパティ用語"
+#description@en "The building name."
+set ic:住所型>ic:ビル名 {0..1} ;
+
+
+#name "ビル番号"
+# "ビルの番号の表記（号棟など）を記述するためのプロパティ用語"
+#description@en "The building number (such as unit number) expressed as text."
+set ic:住所型>ic:ビル番号 {0..1} ;
+
+
+#name "部屋番号"
+# "部屋番号の表記（階数、号室など）を記述するためのプロパティ用語"
+#description@en "The room number (such as floor and room number) expressed as text."
+set ic:住所型>ic:部屋番号 {0..1} ;
+
+
+#name "方書"
+# "方書 (私書箱も含む)を記述するためのプロパティ用語"
+#description@en "The C/O specification (including private mail box)."
+set ic:住所型>ic:方書 {0..1} ;
+
+
+#name "連絡先型"
+# "連絡先を表現するためのクラス用語"
+#name@en "Contact"
+#description@en "A class term to express a contact."
+class ic:連絡先型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "連絡先の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "A category of the contact expressed as text."
+* set ic:連絡先型>ic:種別 {0..n} ;
+***/
+
+
+#name "名称"
+# "連絡先の名称を記述するためのプロパティ用語"
+#description@en "A name of the contact."
+set ic:連絡先型>ic:名称 {0..n} ;
+
+
+#name "組織"
+# "連絡先の組織を記述するためのプロパティ用語　※連絡先が他組織に委任されているときなどに記載"
+#description@en "A name of the organization that receives contacts. Note: Specify when another organization is in charge of receiving contacts."
+set ic:連絡先型>ic:組織 {0..n} ;
+
+
+#name "担当者役職"
+# "連絡先の担当者の役職の表記を記述するためのプロパティ用語"
+#description@en "A title of the contact person expressed as text."
+set ic:連絡先型>ic:担当者役職 {0..n} ;
+
+
+#name "担当者名"
+# "連絡先の担当者の氏名を記述するためのプロパティ用語"
+#description@en "A name of the contact person."
+set ic:連絡先型>ic:担当者名 {0..n} ;
+
+
+#name "Eメールアドレス"
+# "連絡先の電子メールアドレスを記述するためのプロパティ用語"
+#description@en "An electronic mail address to receive contacts."
+set ic:連絡先型>ic:Eメールアドレス {0..n} ;
+
+
+#name "住所"
+# "連絡先の住所を記述するためのプロパティ用語"
+#description@en "A contact address."
+set ic:連絡先型>ic:住所 {0..n} ;
+
+
+#name "送付先"
+# "郵便物送付先の住所（私書箱など）を記述するためのプロパティ用語"
+#description@en "A mailing address (such as a private mail box)."
+set ic:連絡先型>ic:送付先 {0..n} ;
+
+
+#name "電話番号"
+# "連絡先の電話番号を記述するためのプロパティ用語　※0-9 の数字及び + - ( ) , の文字のみを使用"
+#description@en "A telephone number to receive contacts. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+set ic:連絡先型>ic:電話番号 {0..n} ;
+
+
+#name "内線番号"
+# "連絡先の内線番号を記述するためのプロパティ用語"
+#description@en "An extension number of the contact telephone number to receive contacts."
+set ic:連絡先型>ic:内線番号 {0..n} ;
+
+
+#name "FAX番号"
+# "連絡先のFAX番号を記述するためのプロパティ用語　※0-9 の数字及び + - ( ) , の文字のみを使用"
+#description@en "A facsimile number to receive contacts. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+set ic:連絡先型>ic:FAX番号 {0..n} ;
+
+
+#name "携帯電話番号"
+# "連絡先の携帯電話番号を記述するためのプロパティ用語　※0-9 の数字及び + - ( ) , の文字のみを使用"
+#description@en "A cellular phone number to receive contacts. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+set ic:連絡先型>ic:携帯電話番号 {0..n} ;
+
+
+#name "Webサイト"
+# "連絡先のWebサイトを参照するURLを記述するためのプロパティ用語"
+#description@en "An URL that references the Web site of the contact."
+set ic:連絡先型>ic:Webサイト {0..n} ;
+
+
+#name "対応言語"
+# "連絡先との連絡の際に利用可能な言語名を記述するためのプロパティ用語"
+#description@en "A language available when communicating with the contact."
+set ic:連絡先型>ic:対応言語 {0..n} ;
+
+
+#name "電話番号型"
+# "電話番号を表現するためのクラス用語 ※0-9 の数字及び + - ( ) , の文字のみを使用"
+#name@en "Telephone number"
+#description@en "A class term to express a telephone number. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+class ic:電話番号型 {@xsd:string} ;
+
+
+#name "組織型"
+# "組織を表現するためのクラス用語"
+#name@en "Organization"
+#description@en "A class term to express an organization."
+class ic:組織型 {@ic:実体型} ;
+
+
+#name "名称"
+# "組織の名称を記述するためのプロパティ用語　※組合以外は、組織種別を省略して記載"
+#description@en "A name of the organization. Note: Except for unions, specify without an organization category."
+set ic:組織型>ic:名称 {0..n} ;
+
+
+#name "略称アルファベット"
+# "頭文字などを使った組織の略称表記を記述するためのプロパティ用語"
+#description@en "An abbreviated name of the organization using  initial letters, etc."
+set ic:組織型>ic:略称アルファベット {0..n} ;
+
+
+#name "通称"
+# "組織の正式な名称以外に一般的に使用されている名称を記述するためのプロパティ用語"
+#description@en "A generally used name of the organization apart from its official name."
+set ic:組織型>ic:通称 {0..n} ;
+
+
+#name "活動状況"
+# "組織の状況（倒産、破産など）を記述するためのプロパティ用語"
+#description@en "An activity status of the organization (such as bankruptcy)."
+set ic:組織型>ic:活動状況 {0..n} ;
+
+
+#name "活動"
+# "組織の活動を記述するためのプロパティ用語"
+#description@en "An activity of the organization."
+set ic:組織型>ic:活動 {0..n} ;
+
+
+#name "概要"
+# "組織の概要説明を記述するためのプロパティ用語"
+#description@en "An overview description of the organization."
+set ic:組織型>ic:概要 {0..n} ;
+
+
+#name "連絡先"
+# "組織の連絡先（本社、コールセンターなど）を記述するためのプロパティ用語"
+#description@en "A contact of the organization (such as its headquarters and call centers)."
+set ic:組織型>ic:連絡先 {0..n} ;
+
+
+#name "関連組織"
+# "関連する組織（支店など）を記述するためのプロパティ用語"
+#description@en "An associated organization (such as an branch office)."
+set ic:組織型>ic:関連組織 {0..n} ;
+
+
+#name "関連人員"
+# "関連する人員の人数（従業員数など）を記述するためのプロパティ用語"
+#description@en "The number of personnel involved in the organization (such as the number of employees)."
+set ic:組織型>ic:関連人員 {0..n} ;
+
+
+#name "地物"
+# "組織に関連する地物や施設、建物を記述するためのプロパティ用語"
+#description@en "A feature, facility, or building associated with the organization."
+set ic:組織型>ic:地物 {0..n} ;
+
+
+#name "住所"
+# "組織に関係する住所（登記上の住所など）を記述するためのプロパティ用語"
+#description@en "An address of the organization (such as its registered address)."
+set ic:組織型>ic:住所 {0..n} ;
+
+
+#name "代表者"
+# "組織の代表者を記述するためのプロパティ用語"
+#description@en "A representative of the organization."
+set ic:組織型>ic:代表者 {0..n} ;
+
+
+#name "設立日"
+# "設立日を記述するためのプロパティ用語　※支店や事業所の場合は設置日"
+#description@en "The date of establishment of the organization. Note: For the branch or business office, its date of first opening."
+set ic:組織型>ic:設立日 {0..1} ;
+
+
+#name "備考"
+# "備考を記述するためのプロパティ用語　※補足情報などがある場合に記述"
+#description@en "The remarks. Note: Specify when there is any additional information."
+set ic:組織型>ic:備考 {0..1} ;
+
+
+#name "業務組織型"
+# "業務組織を表現するためのクラス用語"
+#name@en "Business organization "
+#description@en "A class term to express a business organization."
+class ic:業務組織型 {@ic:組織型} ;
+
+
+#name "事業種目"
+# "事業の種類の表記（販売業など）を記述するためのプロパティ用語"
+#description@en "A category of the business (such as a distributor) expressed as text."
+set ic:業務組織型>ic:事業種目 {0..n} ;
+
+
+#name "事業年度開始日"
+# "事業年度の開始日を記述するためのプロパティ用語"
+#description@en "The starting date of its business year."
+set ic:業務組織型>ic:事業年度開始日 {0..1} ;
+
+#name "構成員数"
+# "構成員の数を記述するためのプロパティ用語"
+#name@en "Number of members"
+#description@en "The number of members."
+deprecated set ic:業務組織型>ic:構成員数 {0..1} ;
+
+
+#name "代理人"
+# "法定手続きなどの代理人となる組織を記述するためのプロパティ用語"
+#description@en "An organization that acts as agent for legal procedures."
+set ic:業務組織型>ic:代理人 {0..n} ;
+
+
+#name "法人型"
+# "法人を表現するためのクラス用語"
+#name@en "Corporation"
+#description@en "A class term to express a corporation."
+class ic:法人型 {@ic:業務組織型} ;
+
+
+#name "組織種別位置"
+# "組織名称中の組織種別の記載位置の表記（前、後、など）を記述するためのプロパティ用語"
+#description@en "The position of the organization type description within the organization name (as a prefix or suffix etc.) expressed as text."
+set ic:法人型>ic:組織種別位置 {0..1} ;
+
+
+#name "組織種別"
+# "組織の種別コード（株式会社など）を記述するためのプロパティ用語"
+#description@en "The code specifying the category of the organization (such as a limited corporation)."
+set ic:法人型>ic:組織種別 {0..1} ;
+
+
+#name "資本金"
+# "資本金を記述するためのプロパティ用語　※前決算時のもの"
+#description@en "The capital of the organization. Note: The capital in the previous fiscal year."
+set ic:法人型>ic:資本金 {0..1} ;
+
+#name "従業員数"
+# "従業員数を記述するためのプロパティ用語　※前決算時のもの"
+#name@en "Number of employee"
+#description@en "The number of employees. Note: The number in the previous fiscal year."
+deprecated set ic:法人型>ic:従業員数 {0..1} ;
+
+
+#name "人数型"
+# "人数を表現するためのクラス用語"
+#name@en "Head count"
+#description@en "A class term to express the number of people involved."
+class ic:人数型 {@ic:概念型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "人数の種別の表記を記述するためのプロパティ用語　※種別ごとに人数を数える場合"
+* #name@en "Category"
+* #description@en "The category of the number of people expressed as text. Note: In case of counting number of people for each group type."
+* set ic:人数型>ic:種別 {0..1} ;
+***/
+
+
+#name "人数"
+# "人数を記述するためのプロパティ用語"
+#description@en "The number of people."
+set ic:人数型>ic:人数 {0..1} ;
+
+
+#name "構成員型"
+# "組織等を構成する人を表現するクラス用語"
+#name@en "Member"
+#description@en "A class term to express members comprising an organization."
+class ic:構成員型 {@ic:概念型} ;
+
+
+#name "役割"
+# "構成員の役割の表記を記述するためのプロパティ用語"
+#description@en "The role of the member expressed as text."
+set ic:構成員型>ic:役割 {0..1} ;
+
+
+#name "構成員"
+# "構成員を記述するためのプロパティ用語"
+#description@en "The member."
+set ic:構成員型>ic:構成員 {0..1} ;
+
+
+#name "組織関連型"
+# "組織の関連を表現するためのクラス用語"
+#name@en "Organization association"
+#description@en "A class term to express an association with another organization."
+class ic:組織関連型 {@ic:概念型} ;
+
+
+#name "役割"
+# "組織の役割の表記を記述するためのプロパティ用語"
+#description@en "The role of the organization expressed as text."
+set ic:組織関連型>ic:役割 {0..1} ;
+
+
+#name "組織"
+# "関連組織を記述するためのプロパティ用語"
+#description@en "The associated organization."
+set ic:組織関連型>ic:組織 {0..1} ;
+
+
+#name "場所型"
+# "場所を表現するためのクラス用語"
+#name@en "Location"
+#description@en "A class term to express a location."
+class ic:場所型 {@ic:事物型} ;
+
+
+#name "名称"
+# "場所を特定する名称（地名など）を記述するためのプロパティ用語"
+#description@en "A name to identify the location (such as a name of place)."
+set ic:場所型>ic:名称 {0..n} ;
+
+
+#name "通称"
+# "場所の正式な名称以外に一般的に使用されている名称を記述するためのプロパティ用語"
+#description@en "A generally used name of the location apart from its official name."
+set ic:場所型>ic:通称 {0..n} ;
+
+
+#name "地理識別子"
+# "場所の地理識別子を記述するためのプロパティ用語"
+#description@en "The geographical identifier of the location."
+set ic:場所型>ic:地理識別子 {0..1} ;
+
+
+#name "住所"
+# "場所を表す住所を記述するためのプロパティ用語"
+#description@en "The address that indicates the location."
+set ic:場所型>ic:住所 {0..1} ;
+
+
+#name "地理座標"
+# "場所の経緯度座標を記述するためのプロパティ用語"
+#description@en "The latitude-longitude coordinates of the location."
+set ic:場所型>ic:地理座標 {0..1} ;
+
+
+#name "座標型"
+# "座標を表現するためのクラス用語"
+#name@en "Geometry"
+#description@en "A class term to express latitude-longitude coordinates."
+class ic:座標型 {@ic:事物型} ;
+
+
+#name "座標参照系"
+# "座標の参照系に割り振られたIDを記述するためのプロパティ用語"
+#description@en "The identifier assigned to the reference system for coordinates."
+set ic:座標型>ic:座標参照系 {0..1} ;
+
+
+#name "緯度経度書式"
+# "度、分、秒の書式を記述するためのプロパティ用語　※書式はiso6709に準拠する"
+#description@en "The format to express degree, minute and second. Note: The format shall comply with ISO 6709 standard."
+set ic:座標型>ic:緯度経度書式 {0..1} ;
+
+
+#name "緯度"
+# "緯度を記述するためのプロパティ用語　※-90から+90で記載"
+#description@en "The latitude. Note: Specify a value between -90 and +90."
+set ic:座標型>ic:緯度 {0..1} ;
+
+
+#name "経度"
+# "経度を記述するためのプロパティ用語　※-180から+180で記載"
+#description@en "The longitude. Note: Specify a value between -180 and +180."
+set ic:座標型>ic:経度 {0..1} ;
+
+
+#name "座標データ書式"
+# "点、線、面などを表現するデータ文字列の書式を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the format of a data string expressing points, lines, and planes."
+set ic:座標型>ic:座標データ書式 {0..1} ;
+
+
+#name "座標データ"
+# "点、線、面などを表現するデータ文字列を記述するためのプロパティ用語"
+#description@en "The data string specifying points, lines, and planes."
+set ic:座標型>ic:座標データ {0..1} ;
+
+
+#name "測地高度"
+# "測地高度を記述するためのプロパティ用語"
+#description@en "The geodetic height."
+set ic:座標型>ic:測地高度 {0..1} ;
+
+
+#name "ID型"
+# "IDを表現するためのクラス用語"
+#name@en "Identifier"
+#description@en "A class term to express an identifier."
+class ic:ID型 {@ic:概念型} ;
+
+
+#name "体系"
+# "IDの体系を記述するためのプロパティ用語"
+#description@en "The system for specifying identifiers."
+set ic:ID型>ic:体系 {0..1} ;
+
+
+#name "識別値"
+# "IDの値を記述するためのプロパティ用語"
+#description@en "The identifier value."
+set ic:ID型>ic:識別値 {0..1} ;
+
+
+#name "参照"
+# "追加情報などを参照するURLを記述するためのプロパティ用語"
+#description@en "An URL that refers to additional information."
+set ic:ID型>ic:参照 {0..n} ;
+
+
+#name "ID体系型"
+# "IDの体系を表現するためのクラス用語"
+#name@en "Identifier reference system"
+#description@en "A class term to express a system for specifying identifiers."
+class ic:ID体系型 {@ic:事物型} ;
+
+
+#name "名称"
+# "ID体系の名称を記述するためのプロパティ用語"
+#description@en "The name of the system for specifying identifiers."
+set ic:ID体系型>ic:名称 {0..1} ;
+
+
+#name "発行者"
+# "ID体系の発行主体を記述するためのプロパティ用語"
+#description@en "The name of the issuing entity of the system for specifying identifiers."
+set ic:ID体系型>ic:発行者 {0..n} ;
+
+
+#name "バージョン"
+# "ID体系のバージョンを記述するためのプロパティ用語"
+#description@en "The version of the system for specifying identifiers."
+set ic:ID体系型>ic:バージョン {0..1} ;
+
+
+#name "URI"
+# "ID体系や発行者を参照するURIを記述するためのプロパティ用語"
+#name@en "URI"
+#description@en "The URI for referencing the system for specifying identifiers and its issuer."
+deprecated set ic:ID体系型>ic:URI {0..1} ;
+
+
+#name "製品型"
+# "製品を表現するためのクラス用語"
+#name@en "Product"
+#description@en "A class term to express a product."
+class ic:製品型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "製品の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "A category of the product expressed as text."
+* set ic:製品型>ic:種別 {0..n} ;
+***/
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別コード"
+* # "製品の種別コードを記述するためのプロパティ用語"
+* #name@en "Category code"
+* #description@en "A code specifying the category of a product."
+* set ic:製品型>ic:種別コード {0..n} ;
+***/
+
+
+#name "名称"
+# "製品の名称を記述するためのプロパティ用語"
+#description@en "A name of the product."
+set ic:製品型>ic:名称 {0..n} ;
+
+
+#name "自動認識ID"
+# "製品の自動認識ID（バーコードや二次元コードの画像など）が表すURLを記述するためのプロパティ用語"
+#description@en "An URL expressed by the automatic recognition identifier (such as an image of bar code and two-dimensional code) of the product."
+set ic:製品型>ic:自動認識ID {0..n} ;
+
+
+#name "価格"
+# "製品の価格を記述するためのプロパティ用語"
+#description@en "A price of the product."
+set ic:製品型>ic:価格 {0..n} ;
+
+
+#name "使用方法"
+# "使用方法の説明を記述するためのプロパティ用語"
+#description@en "An explanation of the usage instructions."
+set ic:製品型>ic:使用方法 {0..n} ;
+
+
+#name "製造者"
+# "製造者名を記述するためのプロパティ用語"
+#description@en "A name of the manufacturer of the product."
+set ic:製品型>ic:製造者 {0..n} ;
+
+
+#name "製造者ID"
+# "製造者によって割り当てられたIDを記述するためのプロパティ用語"
+#description@en "An identifier of the product assigned by a manufacturer."
+set ic:製品型>ic:製造者ID {0..n} ;
+
+
+#name "販売業者"
+# "販売業者名を記述するためのプロパティ用語"
+#description@en "A name of the distributor of the product."
+set ic:製品型>ic:販売業者 {0..n} ;
+
+
+#name "販売業者ID"
+# "販売業者によって割り当てられたIDを記述するためのプロパティ用語"
+#description@en "An identifier of the product assigned by a distributor."
+set ic:製品型>ic:販売業者ID {0..n} ;
+
+
+#name "入数"
+# "製品が箱などに含まれる数量を記述するためのプロパティ用語"
+#description@en "A quantity of products contained in a box, etc."
+set ic:製品型>ic:入数 {0..n} ;
+
+
+#name "形態"
+# "製品の形態の説明を記述するためのプロパティ用語"
+#description@en "An explanation of the form of the product."
+set ic:製品型>ic:形態 {0..n} ;
+
+
+#name "重量"
+# "製品の重量を記述するためのプロパティ用語"
+#description@en "A weight of the product."
+set ic:製品型>ic:重量 {0..n} ;
+
+
+#name "サイズ"
+# "製品のサイズの表記を記述するためのプロパティ用語"
+#description@en "A size of the product expressed as text."
+set ic:製品型>ic:サイズ {0..n} ;
+
+
+#name "幅"
+# "製品の幅を記述するためのプロパティ用語"
+#description@en "A width of the product."
+set ic:製品型>ic:幅 {0..n} ;
+
+
+#name "高さ"
+# "製品の高さを記述するためのプロパティ用語"
+#description@en "A height of the product."
+set ic:製品型>ic:高さ {0..n} ;
+
+
+#name "長さ"
+# "製品の長さを記述するためのプロパティ用語"
+#description@en "A length of a product."
+set ic:製品型>ic:長さ {0..n} ;
+
+
+#name "色"
+# "製品の色の表記を記述するためのプロパティ用語"
+#description@en "A color of the product expressed as text."
+set ic:製品型>ic:色 {0..n} ;
+
+
+#name "原産国"
+# "製品の原産国名を記述するためのプロパティ用語"
+#description@en "A name of the product's country of origin."
+set ic:製品型>ic:原産国 {0..n} ;
+
+
+#name "原産国コード"
+# "製品の原産国を表すコードを記述するためのプロパティ用語"
+#description@en "A code specifying the product's country of origin."
+set ic:製品型>ic:原産国コード {0..n} ;
+
+
+#name "規制情報"
+# "規制に関する情報（取り扱い上の注意など）を記述するためのプロパティ用語"
+#description@en "Regulatory information (including handling precautions of the product)."
+set ic:製品型>ic:規制情報 {0..n} ;
+
+
+#name "製品個品型"
+# "製品を個別に表現するためのクラス用語"
+#name@en "Product instance"
+#description@en "A class term to express an individual product."
+class ic:製品個品型 {@ic:製品型} ;
+
+
+#name "製造日"
+# "製造日を記述するためのプロパティ用語"
+#description@en "A date of manufacture."
+set ic:製品個品型>ic:製造日 {0..n} ;
+
+
+#name "ロット番号"
+# "製造ロットの番号を記述するためのプロパティ用語"
+#description@en "The manufacturing lot number."
+set ic:製品個品型>ic:ロット番号 {0..1} ;
+
+
+#name "消費期限"
+# "消費期限を記述するためのプロパティ用語"
+#description@en "An expiration date by which the product should be consumed."
+set ic:製品個品型>ic:消費期限 {0..n} ;
+
+
+#name "使用期限"
+# "使用期限を記述するためのプロパティ用語"
+#description@en "An expiration date by which the product should be used."
+set ic:製品個品型>ic:使用期限 {0..n} ;
+
+
+#name "賞味期限"
+# "賞味期限を記述するためのプロパティ用語"
+#description@en "A best-before-date of the product."
+set ic:製品個品型>ic:賞味期限 {0..n} ;
+
+
+#name "シリアル番号"
+# "シリアル番号を記述するためのプロパティ用語"
+#description@en "The serial number."
+set ic:製品個品型>ic:シリアル番号 {0..1} ;
+
+
+#name "状態"
+# "製品の状態の表記（新品、中古など）を記述するためのプロパティ用語"
+#description@en "A state of the product expressed as text (such as new or secondhand)."
+set ic:製品個品型>ic:状態 {0..n} ;
+
+
+#name "所有者"
+# "所有者を記述するためのプロパティ用語"
+#description@en "An owner of the product."
+set ic:製品個品型>ic:所有者 {0..n} ;
+
+
+#name "購入価格"
+# "購入価格を記述するためのプロパティ用語"
+#description@en "A purchase price of the product."
+set ic:製品個品型>ic:購入価格 {0..n} ;
+
+
+#name "地物型"
+# "参照対象となる地物（施設や建物など）を表すためのクラス用語"
+#name@en "Feature"
+#description@en "A class term to express a feature (such as a facility or building) to be referenced."
+class ic:地物型 {@ic:場所型} ;
+
+
+#name "要約"
+# "地物の説明の要約を記述するためのプロパティ用語"
+#description@en "An abstract of description on the feature."
+set ic:地物型>ic:要約 {0..n} ;
+
+
+#name "アクセス"
+# "地物へのアクセス方法を記述するためのプロパティ用語"
+#description@en "A description of the route to the feature."
+set ic:地物型>ic:アクセス {0..n} ;
+
+
+#name "連絡先"
+# "地物の連絡先を記述するためのプロパティ用語"
+#description@en "A contact of the feature."
+set ic:地物型>ic:連絡先 {0..n} ;
+
+
+#name "設備"
+# "地物に定常的に備わっている設備を記述するためのプロパティ用語"
+#description@en "A facility equipped permanently in the feature."
+set ic:地物型>ic:設備 {0..n} ;
+
+
+#name "管理者"
+# "地物を管理している組織や人を記述するためのプロパティ用語"
+#name@en "Administrator"
+#description@en "An organization or person that maintains the feature."
+deprecated set ic:地物型>ic:管理者 {0..n} ;
+
+
+#name "関与"
+# "地物に関連する組織や人を記述するためのプロパティ用語"
+#description@en "An organization or person associated with the feature."
+set ic:地物型>ic:関与 {0..n} ;
+
+
+#name "土地型"
+# "特定の用途に用いられる土地を表現するためのクラス用語"
+#name@en "Land"
+#description@en "A class term to express a plot of land used for a specific purpose."
+class ic:土地型 {@ic:地物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "土地の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The category of the land expressed as text."
+* set ic:土地型>ic:種別 {0..1} ;
+***/
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別コード"
+* # "土地の種別コードを記述するためのプロパティ用語"
+* #name@en "Category code"
+* #description@en "A code specifying the category of the land."
+* set ic:土地型>ic:種別コード {0..n} ;
+***/
+
+
+#name "面積"
+# "土地の面積を記述するためのプロパティ用語"
+#description@en "An area of the land."
+set ic:土地型>ic:面積 {0..n} ;
+
+
+#name "施設型"
+# "施設を表現するためのクラス用語"
+#name@en "Facility"
+#description@en "A class term to express a facility."
+class ic:施設型 {@ic:地物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "施設の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "A category of the facility expressed as text."
+* set ic:施設型>ic:種別 {0..n} ;
+***/
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別コード"
+* # "施設の種別コードを記述するためのプロパティ用語"
+* #name@en "Category code"
+* #description@en "A code specifying the category of the facility."
+* set ic:施設型>ic:種別コード {0..n} ;
+***/
+
+
+#name "利用可能時間"
+# "施設の利用可能日と利用可能時間を記述するためのプロパティ用語"
+#description@en "An available date (or day) and opening hours of the facility."
+set ic:施設型>ic:利用可能時間 {0..n} ;
+
+
+#name "料金"
+# "施設の利用料金を記述するためのプロパティ用語"
+#description@en "A usage fee of the facility."
+set ic:施設型>ic:料金 {0..n} ;
+
+
+#name "収容人数"
+# "施設の収容人数を記述するためのプロパティ用語"
+#description@en "A maximum number of people that the facility can accommodate."
+set ic:施設型>ic:収容人数 {0..n} ;
+
+
+#name "駐車場"
+# "施設にある駐車場を記述するためのプロパティ用語"
+#description@en "A parking area in the facility."
+set ic:施設型>ic:駐車場 {0..n} ;
+
+
+#name "建物"
+# "施設のある建物を記述するためのプロパティ用語"
+#description@en "A building in which the facility is located."
+set ic:施設型>ic:建物 {0..n} ;
+
+
+#name "関連施設"
+# "関連する施設（上位施設、下位施設など）を記述するためのプロパティ用語"
+#description@en "An associated facility (such as a parent or affiliate facility)."
+set ic:施設型>ic:関連施設 {0..n} ;
+
+
+#name "備考"
+# "備考を記述するためのプロパティ用語　※補足情報などがある場合に記述"
+#description@en "The remarks. Note: Specify when there is any additional information."
+set ic:施設型>ic:備考 {0..1} ;
+
+
+#name "施設関連型"
+# "施設の関連を表現するためのクラス用語"
+#name@en "Facility association"
+#description@en "A class term to express an associated facility."
+class ic:施設関連型 {@ic:概念型} ;
+
+
+#name "役割"
+# "関連する施設の役割の表記を記述するためのプロパティ用語"
+#description@en "The role of the associated facility expressed as text."
+set ic:施設関連型>ic:役割 {0..1} ;
+
+
+#name "施設"
+# "関連する施設を記述するためのプロパティ用語"
+#description@en "The associated facility."
+set ic:施設関連型>ic:施設 {0..1} ;
+
+
+#name "建物型"
+# "建物を表現するためのクラス用語"
+#name@en "Building"
+#description@en "A class term to express a building."
+class ic:建物型 {@ic:地物型} ;
+
+
+#name "敷地面積"
+# "建物の敷地面積を記述するためのプロパティ用語"
+#description@en "A ground area of the building."
+set ic:建物型>ic:敷地面積 {0..n} ;
+
+
+#name "主要用途"
+# "建物の主要用途の表記を記述するためのプロパティ用語"
+#description@en "A major use of the building expressed as text."
+set ic:建物型>ic:主要用途 {0..n} ;
+
+
+#name "建築面積"
+# "建物の建築面積を記述するためのプロパティ用語"
+#description@en "A building area of the building."
+set ic:建物型>ic:建築面積 {0..n} ;
+
+
+#name "延べ面積"
+# "建物の延べ床面積を記述するためのプロパティ用語"
+#description@en "A total floor area of the building."
+set ic:建物型>ic:延べ面積 {0..n} ;
+
+
+#name "最高の高さ"
+# "建物の最高点の高さを記述するためのプロパティ用語"
+#description@en "A height of the building's highest point."
+set ic:建物型>ic:最高の高さ {0..n} ;
+
+
+#name "地上階数"
+# "建物の地上階数を記述するためのプロパティ用語"
+#description@en "The number of aboveground floors of the building."
+set ic:建物型>ic:地上階数 {0..n} ;
+
+
+#name "地下階数"
+# "建物の地下階数を記述するためのプロパティ用語"
+#description@en "The number of underground floors of the building."
+set ic:建物型>ic:地下階数 {0..n} ;
+
+
+#name "構造"
+# "建物の構造の表記を記述するためのプロパティ用語"
+#description@en "A structure of the building expressed as text."
+set ic:建物型>ic:構造 {0..n} ;
+
+
+#name "竣工日"
+# "建物の竣工日を記述するためのプロパティ用語"
+#description@en "A completion date of the building."
+set ic:建物型>ic:竣工日 {0..n} ;
+
+
+#name "施設"
+# "建物を利用する施設を記述するためのプロパティ用語"
+#description@en "A facility that uses the building."
+set ic:建物型>ic:施設 {0..n} ;
+
+
+#name "駐車場型"
+# "駐車場を表現するためのクラス用語"
+#name@en "Parking"
+#description@en "A class term to express a parking area."
+class ic:駐車場型 {@ic:施設型} ;
+
+
+#name "駐車場種別"
+# "駐車場の種別の表記を記述するためのプロパティ用語"
+#description@en "The category of the parking area expressed as text."
+set ic:駐車場型>ic:駐車場種別 {0..1} ;
+
+
+#name "収容台数"
+# "駐車場の収容可能台数を記述するためのプロパティ用語"
+#description@en "The maximum number of vehicles that the parking area can accommodate."
+set ic:駐車場型>ic:収容台数 {0..1} ;
+
+
+#name "設備型"
+# "施設や建物等に備わっている設備を表現するためのクラス用語"
+#name@en "Equipment"
+#description@en "A class term to express an equipment installed in a facility or building."
+class ic:設備型 {@ic:事物型} ;
+
+
+#name "名称"
+# "設備の名称を記述するためのプロパティ用語"
+#description@en "The name of the equipment."
+set ic:設備型>ic:名称 {0..1} ;
+
+
+#name "設置地点"
+# "設備が設置されている施設や建物などの地物を記述するためのプロパティ用語"
+#description@en "The feature such as a facility or building in which the equipment is installed."
+set ic:設備型>ic:設置地点 {0..1} ;
+
+
+#name "設置位置"
+# "設備の設置場所の表記（受付横など）を記述するためのプロパティ用語"
+#description@en "The location of the equipment installed (such as beside a reception desk) expressed as text."
+set ic:設備型>ic:設置位置 {0..1} ;
+
+
+#name "利用可能時間"
+# "設備の利用可能日と利用可能時間を記述するためのプロパティ用語"
+#description@en "An available date (or day) and hours of the equipment."
+set ic:設備型>ic:利用可能時間 {0..n} ;
+
+
+#name "料金"
+# "設備の利用料金を記述するためのプロパティ用語"
+#description@en "A usage fee of the equipment."
+set ic:設備型>ic:料金 {0..n} ;
+
+
+#name "外部利用可否"
+# "設備の外部利用可否の記述のためのプロパティ用語"
+#description@en "The textual description of whether or not the equipment is available for use by outsiders."
+set ic:設備型>ic:外部利用可否 {0..1} ;
+
+
+#name "利用者"
+# "設備の利用者の条件を記述するためのプロパティ用語　※利用者に限定条件がある場合"
+#description@en "The condition of eligible users of the equipment. Note: When limiting conditions are specified for users."
+set ic:設備型>ic:利用者 {0..1} ;
+
+
+#name "設置日"
+# "設備の設置日を記述するためのプロパティ用語"
+#description@en "The installation date of the equipment."
+set ic:設備型>ic:設置日 {0..1} ;
+
+
+#name "Webサイト"
+# "設備の関連ホームページを参照するURLを記述するためのプロパティ用語"
+#description@en "The URL that references related web sites of the equipment."
+set ic:設備型>ic:Webサイト {0..1} ;
+
+
+#name "設置者"
+# "設備を設置した組織（自治体など）を記述するためのプロパティ用語"
+#description@en "The organization (such as a local government) that installed the equipment."
+set ic:設備型>ic:設置者 {0..1} ;
+
+
+#name "管理者"
+# "設備を管理している組織や人を記述するためのプロパティ用語"
+#description@en "The organization or person in charge of the maintenance of the equipment."
+set ic:設備型>ic:管理者 {0..1} ;
+
+
+#name "連絡先"
+# "設備の連絡先を記述するためのプロパティ用語"
+#description@en "The contact regarding the equipment."
+set ic:設備型>ic:連絡先 {0..1} ;
+
+
+#name "バリアフリー"
+# "設備のバリアフリーに関する情報の記述のためのプロパティ用語"
+#description@en "The description of information regarding accessibility to the equipment."
+set ic:設備型>ic:バリアフリー {0..1} ;
+
+
+#name "備考"
+# "備考を記述するためのプロパティ用語　※補足情報などがある場合に記述"
+#description@en "The remarks. Note: Specify when there is any additional information."
+set ic:設備型>ic:備考 {0..1} ;
+
+
+#name "イベント型"
+# "時間と場所を指定して行われるイベント（ビジネス、スポーツ、教育、娯楽などの催し）を表現するためのクラス用語"
+#name@en "Exhibition / Festival / Event"
+#description@en "A class term to express an event (such as a business, sport, educational, or entertaining activity) which is held at the specified time and location."
+class ic:イベント型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "イベント内容の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "A category of the event expressed as text."
+* set ic:イベント型>ic:種別 {0..n} ;
+***/
+
+
+#name "名称"
+# "イベントの名称を記述するためのプロパティ用語"
+#description@en "A name of the event."
+set ic:イベント型>ic:名称 {0..n} ;
+
+
+#name "関連組織"
+# "イベントに関連する組織を記述するためのプロパティ用語"
+#description@en "An organization associated with the event."
+set ic:イベント型>ic:関連組織 {0..n} ;
+
+
+#name "開催場所"
+# "イベントの開催場所を記述するためのプロパティ用語"
+#description@en "A venue of the event."
+set ic:イベント型>ic:開催場所 {0..n} ;
+
+
+#name "期間"
+# "イベントの期間を記述するためのプロパティ用語"
+#description@en "A date or period of the event."
+set ic:イベント型>ic:期間 {0..n} ;
+
+
+#name "参加方法"
+# "イベントの参加方法の説明を記述するためのプロパティ用語"
+#description@en "An explanation on how to join the event."
+set ic:イベント型>ic:参加方法 {0..n} ;
+
+
+#name "連絡先"
+# "イベントに関する連絡先を記述するためのプロパティ用語"
+#description@en "A contact regarding the event."
+set ic:イベント型>ic:連絡先 {0..n} ;
+
+
+#name "要約"
+# "イベントの説明の要約を記述するためのプロパティ用語"
+#description@en "An abstract of description on the event."
+set ic:イベント型>ic:要約 {0..n} ;
+
+
+#name "関連イベント"
+# "関連する他のイベントを記述するためのプロパティ用語"
+#description@en "An event associated with the event."
+set ic:イベント型>ic:関連イベント {0..n} ;
+
+#name "対象者"
+# "イベントの参加対象者の説明を記述するためのプロパティ用語"
+#name@en "Target persons"
+#description@en "An explanation on eligible participants of the event."
+deprecated set ic:イベント型>ic:対象者 {0..n} ;
+
+
+#name "人数"
+# "イベントの定員を記述するためのプロパティ用語"
+#description@en "A maximum enrollment for the event."
+set ic:イベント型>ic:人数 {0..n} ;
+
+
+#name "キーワード"
+# "イベントのキーワードの記述のためのプロパティ用語"
+#description@en "A description of keywords of the event."
+set ic:イベント型>ic:キーワード {0..n} ;
+
+
+#name "料金"
+# "イベントの料金を記述するためのプロパティ用語"
+#description@en "A participation fee for the event."
+set ic:イベント型>ic:料金 {0..n} ;
+
+
+#name "利用対象"
+# "イベントや制度等の対象となる事物を記述するためのプロパティ用語"
+#description@en "An thing to be targeted for the event or system."
+set ic:イベント型>ic:利用対象 {0..n} ;
+
+
+#name "活動型"
+# "活動を表現するためのクラス用語"
+#name@en "Activity"
+#description@en "A class term to express an activity."
+class ic:活動型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "活動内容の種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "A category of the activity expressed as text."
+* set ic:活動型>ic:種別 {0..n} ;
+***/
+
+
+#name "名称"
+# "活動の名称を記述するためのプロパティ用語"
+#description@en "A name of the activity."
+set ic:活動型>ic:名称 {0..n} ;
+
+
+#name "関与"
+# "活動に関連する組織や人を記述するためのプロパティ用語"
+#description@en "An organization or person associated with the activity."
+set ic:活動型>ic:関与 {0..n} ;
+
+
+#name "場所"
+# "活動の場所を記述するためのプロパティ用語"
+#description@en "A location of the activity."
+set ic:活動型>ic:場所 {0..n} ;
+
+
+#name "日時"
+# "活動の日時を記述するためのプロパティ用語"
+#description@en "A date and time of the activity."
+set ic:活動型>ic:日時 {0..n} ;
+
+
+#name "期間"
+# "活動の期間を記述するためのプロパティ用語"
+#description@en "A period of the activity."
+set ic:活動型>ic:期間 {0..n} ;
+
+
+#name "関与型"
+# "関連する組織や人を表現するためのクラス用語"
+#name@en "Participation"
+#description@en "A class term to express an associated organization or person."
+class ic:関与型 {@ic:概念型} ;
+
+
+#name "役割"
+# "組織や人の位置付けや役割の表記を記述するためのプロパティ用語"
+#description@en "The position or role of the organization or person expressed as text."
+set ic:関与型>ic:役割 {0..1} ;
+
+
+#name "役割コード"
+# "組織や人の位置付けや役割を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the position or role of the organization or person."
+set ic:関与型>ic:役割コード {0..1} ;
+
+
+#name "関与者"
+# "関連する組織や人を記述するためのプロパティ用語"
+#description@en "An associated organization or person."
+set ic:関与型>ic:関与者 {0..n} ;
+
+
+#name "測定値型"
+# "測定単位及び方法を表現するためのクラス用語"
+#name@en "Measured value"
+#description@en "A class term to express a unit of measurement and its method."
+deprecated class ic:測定値型 {@ic:事物型} ;
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#name@en "Value"
+#description@en "The measured value."
+deprecated set ic:測定値型>ic:数値 {0..1} ;
+
+#name "測定名称"
+# "測定方法の名称を記述するためのプロパティ用語"
+#name@en "Name of measurement"
+#description@en "A name of the measurement method."
+deprecated set ic:測定値型>ic:測定名称 {0..n} ;
+
+#name "測定単位"
+# "測定の単位を記述するためのプロパティ用語"
+#name@en "Unit of measurement"
+#description@en "A unit of the measurement."
+deprecated set ic:測定値型>ic:測定単位 {0..n} ;
+
+
+#name "数量型"
+# "数量を表現するためのクラス用語"
+#name@en "Quantity"
+#description@en "A class term to express quantity."
+class ic:数量型 {@ic:概念型} ;
+
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#description@en "The measured value."
+set ic:数量型>ic:数値 {0..1} ;
+
+#name "数量単位"
+# "数量の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Number unit code"
+#description@en "The code specifying the unit of quantity."
+deprecated set ic:数量型>ic:数量単位 {0..1} ;
+
+
+#name "単位"
+# "単位を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the unit."
+set ic:数量型>ic:単位 {0..1} ;
+
+
+#name "単位表記"
+# "単位の文字列による表現（助数詞など）を記述するためのプロパティ用語"
+#description@en "The unit expressed as a string (such as a counter suffix)."
+set ic:数量型>ic:単位表記 {0..1} ;
+
+
+#name "容量型"
+# "容量を表現するためのクラス用語"
+#name@en "Volume/Capacity"
+#description@en "A class term to express volume."
+class ic:容量型 {@ic:概念型} ;
+
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#description@en "The measured value."
+set ic:容量型>ic:数値 {0..1} ;
+
+#name "容量単位"
+# "容量の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Volume unit code"
+#description@en "The code specifying the unit of volume."
+deprecated set ic:容量型>ic:容量単位 {0..1} ;
+
+
+#name "単位"
+# "単位を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the unit."
+set ic:容量型>ic:単位 {0..1} ;
+
+
+#name "単位表記"
+# "単位の文字列による表現を記述するためのプロパティ用語"
+#description@en "The unit expressed as a string."
+set ic:容量型>ic:単位表記 {0..1} ;
+
+
+#name "面積型"
+# "面積を表現するためのクラス用語"
+#name@en "Square measure"
+#description@en "A class term to express area."
+class ic:面積型 {@ic:概念型} ;
+
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#description@en "The measured value."
+set ic:面積型>ic:数値 {0..1} ;
+
+#name "面積単位"
+# "面積の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Area unit code"
+#description@en "The code specifying the unit of area."
+deprecated set ic:面積型>ic:面積単位 {0..1} ;
+
+
+#name "単位"
+# "単位を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the unit."
+set ic:面積型>ic:単位 {0..1} ;
+
+
+#name "単位表記"
+# "単位の文字列による表現を記述するためのプロパティ用語"
+#description@en "The unit expressed as a string."
+set ic:面積型>ic:単位表記 {0..1} ;
+
+
+#name "重量型"
+# "重量を表現するためのクラス用語"
+#name@en "Weight"
+#description@en "A class term to express weight."
+class ic:重量型 {@ic:概念型} ;
+
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#description@en "The measured value."
+set ic:重量型>ic:数値 {0..1} ;
+
+#name "重量単位"
+# "重量の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Weight unit code"
+#description@en "The code specifying the unit of weight."
+deprecated set ic:重量型>ic:重量単位 {0..1} ;
+
+
+#name "単位"
+# "単位を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the unit."
+set ic:重量型>ic:単位 {0..1} ;
+
+
+#name "単位表記"
+# "単位の文字列による表現を記述するためのプロパティ用語"
+#description@en "The unit expressed as a string."
+set ic:重量型>ic:単位表記 {0..1} ;
+
+
+#name "長さ型"
+# "長さを表現するためのクラス用語"
+#name@en "Length"
+#description@en "A class term to express length."
+class ic:長さ型 {@ic:概念型} ;
+
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#description@en "The measured value."
+set ic:長さ型>ic:数値 {0..1} ;
+
+#name "長さ単位"
+# "長さの単位を表すコードを記述するためのプロパティ用語"
+#name@en "Length unit code"
+#description@en "The code specifying the unit of length."
+deprecated set ic:長さ型>ic:長さ単位 {0..1} ;
+
+
+#name "単位"
+# "単位を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the unit."
+set ic:長さ型>ic:単位 {0..1} ;
+
+
+#name "単位表記"
+# "単位の文字列による表現を記述するためのプロパティ用語"
+#description@en "The unit expressed as a string."
+set ic:長さ型>ic:単位表記 {0..1} ;
+
+
+#name "時間型"
+# "時間の長さを表現するためのクラス用語"
+#name@en "Duration"
+#description@en "A class term to express time length."
+deprecated class ic:時間型 {@ic:事物型} ;
+
+#name "数値"
+# "測定数値を記述するためのプロパティ用語"
+#name@en "Value"
+#description@en "The measured value."
+deprecated set ic:時間型>ic:数値 {0..1} ;
+
+#name "時間単位"
+# "時間の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Time unit code"
+#description@en "The code specifying the unit of time length."
+deprecated set ic:時間型>ic:時間単位 {0..1} ;
+
+
+#name "金額型"
+# "金額を表現するためのクラス用語"
+#name@en "Amount of money"
+#description@en "A class term to express amount of money."
+class ic:金額型 {@ic:概念型} ;
+
+
+#name "数値"
+# "金額の値を記述するためのプロパティ用語"
+#description@en "The value of the amount of money."
+set ic:金額型>ic:数値 {0..1} ;
+
+
+#name "通貨"
+# "通貨名を記述するためのプロパティ用語"
+#description@en "The name of the currency."
+set ic:金額型>ic:通貨 {0..1} ;
+
+
+#name "通貨コード"
+# "通貨コードを記述するためのプロパティ用語"
+#description@en "The code specifying the currency."
+set ic:金額型>ic:通貨コード {0..1} ;
+
+
+#name "乗数"
+# "金額の値に対する変換乗数を記述するためのプロパティ用語"
+#description@en "The conversion multiplier to be applied to the value of the amount of money."
+set ic:金額型>ic:乗数 {0..1} ;
+
+
+#name "価格型"
+# "価格を表現するためのクラス用語"
+#name@en "Charge / Price"
+#description@en "A class term to express a price."
+class ic:価格型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "価格の対象単位や種別の表記を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The corresponding unit and category expressed as text applied to the price."
+* set ic:価格型>ic:種別 {0..1} ;
+***/
+
+
+#name "金額"
+# "価格の金額を記述するためのプロパティ用語"
+#description@en "The amount of money of the price."
+set ic:価格型>ic:金額 {0..1} ;
+
+
+#name "実体型"
+# "実体を表現するためのクラス用語"
+#name@en "Entity"
+#description@en "A class term to express an entity."
+class ic:実体型 {@ic:事物型} ;
+
+
+#name "状況型"
+# "状況を表現するためのクラス用語"
+#name@en "Status"
+#description@en "A class term to express state of affairs."
+class ic:状況型 {@ic:概念型} ;
+
+
+#name "名称"
+# "状況の名称を記述するためのプロパティ用語"
+#description@en "A name of the state of affairs."
+set ic:状況型>ic:名称 {0..n} ;
+
+
+#name "発生日"
+# "状況の発生日時を記述するためのプロパティ用語"
+#description@en "A date and time of the occurrence of the state of affairs."
+set ic:状況型>ic:発生日 {0..n} ;
+
+#name "詳細"
+# "状況の詳細説明を記述するためのプロパティ用語"
+#name@en "Detail description"
+#description@en "A detailed description of the state of affairs."
+deprecated set ic:状況型>ic:詳細 {0..n} ;
+
+#name "関係者"
+# "状況に関係する組織や人を記述するためのプロパティ用語"
+#name@en "Issuer"
+#description@en "A person or organization involved in the state of affairs."
+deprecated set ic:状況型>ic:関係者 {0..n} ;
+
+
+#name "関与"
+# "状況に関連する組織や人を記述するためのプロパティ用語"
+#description@en "A person or organization associated with the state of affairs."
+set ic:状況型>ic:関与 {0..n} ;
+
+
+#name "説明"
+# "状況の説明を記述するためのプロパティ用語"
+#description@en "The description of the state of affairs."
+set ic:状況型>ic:説明 {0..1} ;
+
+
+#name "期間"
+# "状況の期間を記述するためのプロパティ用語"
+#description@en "A period of the state of affairs."
+set ic:状況型>ic:期間 {0..n} ;
+
+
+#name "日時型"
+# "日時を表現するためのクラス用語"
+#name@en "Date and time"
+#description@en "A class term to express date and time."
+class ic:日時型 {@ic:概念型} ;
+
+
+#name "標準型日時"
+# "日時を記述するためのプロパティ用語"
+#description@en "The date and time."
+set ic:日時型>ic:標準型日時 {0..1} ;
+
+
+#name "年号"
+# "元号を記述するためのプロパティ用語"
+#description@en "The Japanese era."
+set ic:日時型>ic:年号 {0..1} ;
+
+
+#name "年"
+# "年の値を記述するためのプロパティ用語"
+#description@en "The year value."
+set ic:日時型>ic:年 {0..1} ;
+
+
+#name "月"
+# "月の値を記述するためのプロパティ用語"
+#description@en "The month value."
+set ic:日時型>ic:月 {0..1} ;
+
+
+#name "日"
+# "日の値を記述するためのプロパティ用語"
+#description@en "The day value."
+set ic:日時型>ic:日 {0..1} ;
+
+
+#name "時"
+# "時の値を記述するためのプロパティ用語"
+#description@en "The hour value."
+set ic:日時型>ic:時 {0..1} ;
+
+
+#name "分"
+# "分の値を記述するためのプロパティ用語"
+#description@en "The minute value."
+set ic:日時型>ic:分 {0..1} ;
+
+
+#name "秒"
+# "秒の値を記述するためのプロパティ用語"
+#description@en "The second value."
+set ic:日時型>ic:秒 {0..1} ;
+
+
+#name "時間帯"
+# "時間帯を記述するためのプロパティ用語　※協定世界時からの時間差"
+#description@en "The time zone. Note: The time difference from the Coordinated Universal Time."
+set ic:日時型>ic:時間帯 {0..1} ;
+
+
+#name "カレンダー"
+# "カレンダーの種類を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the type of calendar."
+set ic:日時型>ic:カレンダー {0..1} ;
+
+
+#name "表記"
+# "日時の任意の表記を記述するためのプロパティ用語"
+#description@en "The date and time expressed in an arbitrary format."
+set ic:日時型>ic:表記 {0..1} ;
+
+
+#name "日付型"
+# "日付を表現するためのクラス用語"
+#name@en "Date"
+#description@en "A class term to express date."
+class ic:日付型 {@ic:概念型} ;
+
+
+#name "標準型日付"
+# "日付を記述するためのプロパティ用語"
+#description@en "The date."
+set ic:日付型>ic:標準型日付 {0..1} ;
+
+
+#name "年号"
+# "元号を記述するためのプロパティ用語"
+#description@en "The Japanese era."
+set ic:日付型>ic:年号 {0..1} ;
+
+
+#name "年"
+# "年の値を記述するためのプロパティ用語"
+#description@en "The year value."
+set ic:日付型>ic:年 {0..1} ;
+
+
+#name "月"
+# "月の値を記述するためのプロパティ用語"
+#description@en "The month value."
+set ic:日付型>ic:月 {0..1} ;
+
+
+#name "日"
+# "日の値を記述するためのプロパティ用語"
+#description@en "The day value."
+set ic:日付型>ic:日 {0..1} ;
+
+
+#name "時間帯"
+# "時間帯を記述するためのプロパティ用語　※協定世界時からの時間差"
+#description@en "The time zone. Note: The time difference from the Coordinated Universal Time."
+set ic:日付型>ic:時間帯 {0..1} ;
+
+
+#name "カレンダー"
+# "カレンダーの種類を表すコードを記述するためのプロパティ用語"
+#description@en "The code specifying the type of calendar."
+set ic:日付型>ic:カレンダー {0..1} ;
+
+
+#name "表記"
+# "日付の任意の表記を記述するためのプロパティ用語"
+#description@en "The textual expression of the date in an arbitrary format."
+set ic:日付型>ic:表記 {0..1} ;
+
+
+#name "期間型"
+# "期間を表現するためのクラス用語"
+#name@en "Period"
+#description@en "A class term to express a period."
+class ic:期間型 {@ic:期間スケジュール型} ;
+
+
+#name "開始日時"
+# "期間の開始日時を記述するためのプロパティ用語"
+#description@en "The starting date and time of the period."
+set ic:期間型>ic:開始日時 {0..1} ;
+
+
+#name "終了日時"
+# "期間の終了日時を記述するためのプロパティ用語"
+#description@en "The closing date and time of the period."
+set ic:期間型>ic:終了日時 {0..1} ;
+
+
+#name "説明"
+# "期間の説明（例外など）を記述するためのプロパティ用語"
+#description@en "The description of the period (such as exceptions)."
+set ic:期間型>ic:説明 {0..1} ;
+
+
+#name "期間スケジュール型"
+# "期間やスケジュールを表現するためのクラス用語"
+#name@en "Period or schedule"
+#description@en "A class term to express a period or schedule."
+class ic:期間スケジュール型 {@ic:概念型} ;
+
+
+#name "イベントスケジュール型"
+# "イベントスケジュールを表現するためのクラス用語"
+#name@en "Schedule for event"
+#description@en "A class term to express an event schedule."
+class ic:イベントスケジュール型 {@ic:期間スケジュール型} ;
+
+
+#name "開催日"
+# "イベントが開催される日付を記述するためのプロパティ用語　※一日だけの開催の場合。列挙可"
+#description@en "A date on which the event is held. Note: When the event is hold only for a day. A list of days is allowed as well."
+set ic:イベントスケジュール型>ic:開催日 {0..n} ;
+
+
+#name "開始日"
+# "イベントの開始日を記述するためのプロパティ用語"
+#description@en "The starting date of the event."
+set ic:イベントスケジュール型>ic:開始日 {0..1} ;
+
+
+#name "終了日"
+# "イベントの終了日を記述するためのプロパティ用語"
+#description@en "The closing date of the event."
+set ic:イベントスケジュール型>ic:終了日 {0..1} ;
+
+
+#name "開始時間"
+# "イベントの場所やサービスの開始時間を記述するためのプロパティ用語"
+#description@en "The starting time of the place or service of the event."
+set ic:イベントスケジュール型>ic:開始時間 {0..1} ;
+
+
+#name "終了時間"
+# "イベントの場所やサービスの終了時間を記述するためのプロパティ用語"
+#description@en "The closing time of the place or service of the event."
+set ic:イベントスケジュール型>ic:終了時間 {0..1} ;
+
+
+#name "説明"
+# "スケジュールの説明（例外など）を記述するためのプロパティ用語"
+#description@en "The description of the schedule (such as exceptions)."
+set ic:イベントスケジュール型>ic:説明 {0..1} ;
+
+
+#name "定期スケジュール型"
+# "定期的に繰り返されるスケジュールを表現するクラス用語"
+#name@en "Periodic schedule"
+#description@en "A class term to express a schedule that is repeatedly held on a regular basis."
+class ic:定期スケジュール型 {@ic:期間スケジュール型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "スケジュールの種別の表記（「週間」「月間」「年間」など）を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The category of the schedule expressed as text (such as 'weekly', 'monthly' and 'yearly')."
+* set ic:定期スケジュール型>ic:種別 {0..1} ;
+***/
+
+
+#name "開催期日"
+# "スケジュールが有効となる日を記述するためのプロパティ用語　※スケジュールの種別が「週間」の場合は曜日、「月間」の場合は月の中の日、「年間」の場合は年の中の月日を指定する。"
+#description@en "A day on which the schedule becomes effective. Note: If the schedule category is 'weekly', then select a day of the week. If it is 'monthly' or 'yearly', then select a date in the month or the year respectively."
+set ic:定期スケジュール型>ic:開催期日 {0..n} ;
+
+
+#name "有効開始日時"
+# "スケジュールが有効になる日時を記述するためのプロパティ用語"
+#description@en "The date and time when the schedule becomes effective."
+set ic:定期スケジュール型>ic:有効開始日時 {0..1} ;
+
+
+#name "有効終了日時"
+# "スケジュールが無効になる日時を記述するためのプロパティ用語"
+#description@en "The date and time when the schedule becomes ineffective."
+set ic:定期スケジュール型>ic:有効終了日時 {0..1} ;
+
+
+#name "開始時間"
+# "指定された曜日の場所やサービスの開始時間を記述するためのプロパティ用語"
+#description@en "The venue and the starting time of services on the specified day of the week."
+set ic:定期スケジュール型>ic:開始時間 {0..1} ;
+
+
+#name "終了時間"
+# "指定された曜日の場所やサービスの終了時間を記述するためのプロパティ用語"
+#description@en "The venue and the closing time of services on the specified day of the week."
+set ic:定期スケジュール型>ic:終了時間 {0..1} ;
+
+
+#name "説明"
+# "スケジュールの説明（例外など）を記述するためのプロパティ用語"
+#description@en "The description of the schedule (such as exceptions)."
+set ic:定期スケジュール型>ic:説明 {0..1} ;
+
+
+#name "詳細スケジュール型"
+# "（将来的に整備する予定）施設等のオープン日とオープン時間を表現するためのクラス用語。複数のスケジュールが列挙された場合はそれらの和を取るものとする"
+#name@en "Detailed schedule "
+#description@en "(To be defined in the future)A class term to express opening time and day of a facility. When multiple schedules are listed, enumerate them."
+class ic:詳細スケジュール型 {@ic:期間スケジュール型} ;
+
+
+#name "詳細スケジュール規則型"
+# "（将来的に整備する予定）繰り返し型のスケジュールを定義するためのクラス用語"
+#name@en "Repeating rule for detailed schedule"
+#description@en "(To be defined in the future) class term to define a repetitive schedule."
+class ic:詳細スケジュール規則型 {@ic:期間スケジュール型} ;
+
+
+#name "コード型"
+# "コードを表現するためのクラス用語"
+#name@en "Code"
+#description@en "A class term to express a code."
+class ic:コード型 {@ic:概念型} ;
+
+
+#name "コード種別"
+# "コードの種別を記述するためのプロパティ用語"
+#description@en "The type of the code."
+set ic:コード型>ic:コード種別 {0..1} ;
+
+
+#name "識別値"
+# "コードの値を記述するためのプロパティ用語"
+#description@en "The code value."
+set ic:コード型>ic:識別値 {0..1} ;
+
+
+#name "表記"
+# "コードの値に対応する概念の表記を記述するためのプロパティ用語"
+#description@en "A textual expression of the concept corresponding to the set of code values."
+set ic:コード型>ic:表記 {0..n} ;
+
+
+#name "上位コード"
+# "当該コードの上位に位置するコードを記述するためのプロパティ用語"
+#description@en "An upper-level code of the code concerned."
+set ic:コード型>ic:上位コード {0..n} ;
+
+
+#name "下位コード"
+# "当該コードの下位に位置するコードを記述するためのプロパティ用語"
+#description@en "A lower-level code of the code concerned."
+set ic:コード型>ic:下位コード {0..n} ;
+
+
+#name "関連コード"
+# "当該コードに関連するコードを記述するためのプロパティ用語"
+#description@en "A code related to the code concerned."
+set ic:コード型>ic:関連コード {0..n} ;
+
+
+#name "参照"
+# "追加情報などを参照するURLを記述するためのプロパティ用語"
+#description@en "An URL that refers to additional information."
+set ic:コード型>ic:参照 {0..n} ;
+
+
+#name "単位コード型"
+# "単位コードを表現するためのクラス用語"
+#name@en "Unit code"
+#description@en "A class term to express a unit code."
+class ic:単位コード型 {@ic:コード型} ;
+
+
+#name "量種別"
+# "量の種別の表記を記述するためのプロパティ用語"
+#description@en "The category of the quantity expressed as text."
+set ic:単位コード型>ic:量種別 {0..1} ;
+
+
+#name "乗数"
+# "基本単位に対する変換乗数を記述するためのプロパティ用語"
+#description@en "The conversion multiplier to be applied to the base unit."
+set ic:単位コード型>ic:乗数 {0..1} ;
+
+
+#name "コードリスト型"
+# "コードリストを表現するためのクラス用語"
+#name@en "Code list"
+#description@en "A class term to express a code list."
+class ic:コードリスト型 {@ic:事物型} ;
+
+
+#name "名称"
+# "コードリストの名称を記述するためのプロパティ用語"
+#description@en "The name of the code list."
+set ic:コードリスト型>ic:名称 {0..1} ;
+
+
+#name "発行者"
+# "コードリストの発行主体を記述するためのプロパティ用語"
+#description@en "The issuing entity of the code list."
+set ic:コードリスト型>ic:発行者 {0..n} ;
+
+
+#name "バージョン"
+# "コードリストのバージョンを記述するためのプロパティ用語"
+#description@en "The version of the code list."
+set ic:コードリスト型>ic:バージョン {0..1} ;
+
+#name "URI"
+# "コードリストや発行者を参照するURIを記述するためのプロパティ用語"
+#name@en "URI"
+#description@en "The URI that references the code list and its issuer."
+deprecated set ic:コードリスト型>ic:URI {0..1} ;
+
+
+#name "アクセス型"
+# "地物等へのアクセスを表現するためのクラス用語"
+#name@en "Route"
+#description@en "A class term to express a route to a feature, etc."
+class ic:アクセス型 {@ic:概念型} ;
+
+
+#name "ID"
+# "アクセス方法に割り振られたIDを記述するためのプロパティ用語"
+#description@en "An identifier assigned to the route."
+set ic:アクセス型>ic:ID {0..1} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "アクセス方法の主たる交通手段（通常、最寄地点からの交通手段。鉄道、バス、徒歩、など）を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The major transportation means for the route. (Generally, transportation from the nearest point such as train, bus, and by walk.)"
+* set ic:アクセス型>ic:種別 {0..1} ;
+***/
+
+
+#name "始点"
+# "アクセス方法の始点（出発地点）を記述するためのプロパティ用語"
+#description@en "The origin of the route (point of departure)."
+set ic:アクセス型>ic:始点 {0..1} ;
+
+
+#name "始点備考"
+# "アクセス方法の始点についての備考を記述するためのプロパティ用語"
+#description@en "The remarks on the origin of the route."
+set ic:アクセス型>ic:始点備考 {0..1} ;
+
+
+#name "終点"
+# "アクセス方法の終点（目的地点）を記述するためのプロパティ用語"
+#description@en "The destination of the route (point of arrival)."
+set ic:アクセス型>ic:終点 {0..1} ;
+
+
+#name "終点備考"
+# "アクセス方法の終点についての備考を記述するためのプロパティ用語"
+#description@en "The remarks on the destination of the route."
+set ic:アクセス型>ic:終点備考 {0..1} ;
+
+
+#name "アクセス区間"
+# "アクセス方法の各区間の一覧を記述するためのプロパティ用語"
+#description@en "A list of sections of the route."
+set ic:アクセス型>ic:アクセス区間 {0..n} ;
+
+
+#name "時間"
+# "始点から終点までのアクセス時間を記述するためのプロパティ用語"
+#description@en "The amount of time required for taking the route from the origin to the destination."
+set ic:アクセス型>ic:時間 {0..1} ;
+
+
+#name "地図"
+# "アクセス方法を示す地図を参照するURLを記述するためのプロパティ用語"
+#description@en "The URL that references a map indicating the route."
+set ic:アクセス型>ic:地図 {0..1} ;
+
+
+#name "備考"
+# "備考を記述するためのプロパティ用語　※補足情報などがある場合に記述"
+#description@en "The remarks. Note: Specify when there is any additional information."
+set ic:アクセス型>ic:備考 {0..1} ;
+
+
+#name "アクセス区間型"
+# "アクセスに含まれる各区間を表現するためのクラス用語"
+#name@en "Section of route"
+#description@en "A class term to express each section of a route."
+class ic:アクセス区間型 {@ic:概念型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "アクセス区間の交通手段を記述するためのプロパティ用語"
+* #name@en "Category"
+* #description@en "The transportation means for the section of the route."
+* set ic:アクセス区間型>ic:種別 {0..1} ;
+***/
+
+
+#name "始点"
+# "アクセス区間の始点（出発地点）を記述するためのプロパティ用語"
+#description@en "The origin (point of departure) of the section of the route."
+set ic:アクセス区間型>ic:始点 {0..1} ;
+
+
+#name "始点備考"
+# "アクセス区間の始点についての備考を記述するためのプロパティ用語"
+#description@en "The remarks on the origin of the section of the route."
+set ic:アクセス区間型>ic:始点備考 {0..1} ;
+
+
+#name "路線"
+# "アクセス区間に用いる交通の路線（事業者及び路線名、バス系統など）を記述するためのプロパティ用語"
+#description@en "The line of transportation used in the section of the route (such as a transport service provider, line name, and bus route)."
+set ic:アクセス区間型>ic:路線 {0..1} ;
+
+
+#name "終点"
+# "アクセス区間の終点（目的地点）を記述するためのプロパティ用語"
+#description@en "The destination (point of arrival) of the section of the route."
+set ic:アクセス区間型>ic:終点 {0..1} ;
+
+
+#name "終点備考"
+# "アクセス区間の終点についての備考を記述するためのプロパティ用語"
+#description@en "The remarks on the destination of the section of the route."
+set ic:アクセス区間型>ic:終点備考 {0..1} ;
+
+
+#name "時間"
+# "始点から終点までのアクセス時間を記述するためのプロパティ用語"
+#description@en "The amount of time required for taking the section of the route from the origin to the destination."
+set ic:アクセス区間型>ic:時間 {0..1} ;
+
+
+#name "概念型"
+# "全ての型のベースとなる基本型としてのクラス用語"
+#name@en "Concept"
+#description@en "A class term that serves as the base type for all types."
+class ic:概念型 ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "種別"
+# "種別の表記を記述するためのプロパティ用語"
+#description@en "A category of a concept expressed as text."
+set ic:概念型>ic:種別 {0..n} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "種別コード"
+# "種別コードを記述するためのプロパティ用語"
+#description@en "A code specifying the category of a concept."
+set ic:概念型>ic:種別コード {0..n} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "メタデータ"
+# "データのメタデータを記述するためのプロパティ用語"
+#description@en "A document specifying the metadata of a data."
+set ic:概念型>ic:メタデータ {0..n} ;
+
+
+#name "事物型"
+# "識別可能なことやものを表すためのクラス用語"
+#name@en "Thing"
+#description@en "A class term to represent an identifiable thing."
+class ic:事物型 {@ic:概念型} ;
+
+
+#name "ID"
+# "事物に割り振られたID（識別子)を記述するためのプロパティ用語"
+#description@en "An identifier assigned to the thing."
+set ic:事物型>ic:ID {0..n} ;
+
+
+#name "表記"
+# "文字列による表記を記述するためのプロパティ用語"
+#description@en "A representation of the thing expressed as text."
+set ic:事物型>ic:表記 {0..n} ;
+
+
+#name "参照"
+# "追加情報などを参照するURLを記述するためのプロパティ用語"
+#description@en "An URL that refers to additional information."
+set ic:事物型>ic:参照 {0..n} ;
+
+
+#name "画像"
+# "画像を参照するURLを記述するためのプロパティ用語"
+#description@en "An URL that refers to an image of the thing."
+set ic:事物型>ic:画像 {0..n} ;
+
+
+#name "説明"
+# "説明を記述するためのプロパティ用語"
+#description@en "A description of the thing."
+set ic:事物型>ic:説明 {0..n} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "記述"
+# "種別付きの説明文を記述するためのプロパティ用語"
+#description@en "An explanation for the thing."
+set ic:事物型>ic:記述 {0..n} ;
+
+
+#name "参照型"
+# "追加情報等を参照するためのクラス用語"
+#name@en "Reference"
+#description@en "A class term to refer to additional information."
+class ic:参照型 {@ic:概念型} ;
+
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "様々な事物の種別の表記を記述するためのプロパティ用語"
+* #name@en "TODO"
+* #description@en "A category of the referenced information."
+* set ic:参照型>ic:種別 {0..n} ;
+***/
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別コード"
+* # "種別コードを記述するためのプロパティ用語"
+* #name@en "TODO"
+* #description@en "A category of the referenced information expressed as a code."
+* set ic:参照型>ic:種別コード {0..n} ;
+***/
+
+
+#name "参照先"
+# "追加情報などを参照するURLを記述するためのプロパティ用語"
+#description@en "An URL that refers to the additional information."
+set ic:参照型>ic:参照先 {0..n} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "記述型"
+# "種別付きの説明文を表現するためのクラス用語"
+#name@en "Explanation"
+#description@en "A class term to express an explanation in text with a category."
+class ic:記述型 {@ic:概念型} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "説明"
+# "説明のテキストを記述するためのプロパティ用語"
+#description@en "The description of the thing."
+set ic:記述型>ic:説明 {0..n} ;
+
+
+#name "サービス型"
+# "サービスの情報を表現するためのクラス用語"
+#name@en "Service"
+#description@en "A class term to express a service."
+class ic:サービス型 {@ic:事物型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "様々な事物の種別の表記を記述するためのプロパティ用語"
+* #name@en "TODO"
+* #description@en "A category of the service."
+* set ic:サービス型>ic:種別 {0..n} ;
+***/
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別コード"
+* # "種別コードを記述するためのプロパティ用語"
+* #name@en "TODO"
+* #description@en "A category of the service expressed as a code."
+* set ic:サービス型>ic:種別コード {0..n} ;
+***/
+
+
+#name "名称"
+# "名称を記述するためのプロパティ用語"
+#description@en "A name of the service."
+set ic:サービス型>ic:名称 {0..n} ;
+
+
+#name "利用対象"
+# "利用対象となる事物を記述するためのプロパティ用語"
+#description@en "A thing to be targeted for the service."
+set ic:サービス型>ic:利用対象 {0..n} ;
+
+
+#name "提供者"
+# "サービスを提供する実体もしくは組織や人を記述するためのプロパティ用語"
+#description@en "An entity such as an organization or person that provides the service."
+set ic:サービス型>ic:提供者 {0..n} ;
+
+
+#name "利用方法"
+# "利用方法を記述するためのプロパティ用語"
+#description@en "A procedure to use the service."
+set ic:サービス型>ic:利用方法 {0..n} ;
+
+
+#name "文書型"
+# "文書の情報を表すクラス用語（Dublin Core Metadata Element Setに準拠）"
+#name@en "Document"
+#description@en "A class term to express information of a document (that complies with Dublin Core Metadata Element Set)."
+class ic:文書型 {@ic:事物型} ;
+
+
+#name "表題"
+# "文書に与えられた名前を記述するためのプロパティ用語"
+#description@en "A name given to the document."
+set ic:文書型>ic:表題 {0..n} ;
+
+
+#name "作成者"
+# "文書の内容の作成に主たる責任をもつ実体を記述するためのプロパティ用語"
+#description@en "An entity primarily responsible for making the document."
+set ic:文書型>ic:作成者 {0..n} ;
+
+
+#name "キーワード"
+# "文書のトピックを記述するためのプロパティ用語"
+#description@en "A topic of the document."
+set ic:文書型>ic:キーワード {0..n} ;
+
+
+#name "発行者"
+# "文書を公開することに対して責任をもつ実体を記述するためのプロパティ用語"
+#description@en "An entity responsible for making the document available."
+set ic:文書型>ic:発行者 {0..n} ;
+
+
+#name "寄与者"
+# "文書の内容になんらかの寄与、貢献をした実体を記述するためのプロパティ用語"
+#description@en "An entity responsible for making contributions to the document."
+set ic:文書型>ic:寄与者 {0..n} ;
+
+
+#name "日付"
+# "文書のライフサイクルにおけるなんらかの事象に関するある時点又は時間的区間を記述するためのプロパティ用語"
+#description@en "A point or period of time associated with an event in the lifecycle of the document."
+set ic:文書型>ic:日付 {0..n} ;
+
+
+#name "資源タイプ"
+# "文書の性質又はジャンルを記述するためのプロパティ用語"
+#description@en "A nature or genre of the document."
+set ic:文書型>ic:資源タイプ {0..n} ;
+
+
+#name "記録形式"
+# "文書のファイルの記録形式、物理媒体又は次元を記述するためのプロパティ用語"
+#description@en "A file format, physical medium, or dimensions of the document."
+set ic:文書型>ic:記録形式 {0..n} ;
+
+
+#name "記録形式コード"
+# "文書のファイルの記録形式、物理媒体又は次元のコードを記述するためのプロパティ用語"
+#description@en "A code specifying a file format, physical medium, or dimensions of the document."
+set ic:文書型>ic:記録形式コード {0..n} ;
+
+
+#name "出処"
+# "当該文書の由来となるような関係の文書源を記述するためのプロパティ用語"
+#description@en "A related document from which the described document is derived."
+set ic:文書型>ic:出処 {0..n} ;
+
+
+#name "言語"
+# "文書の言語を記述するためのプロパティ用語"
+#description@en "A language of the document."
+set ic:文書型>ic:言語 {0..n} ;
+
+
+#name "権利管理"
+# "文書に含まれる、又はかかわる権利管理に関する情報を記述するためのプロパティ用語"
+#description@en "An information about rights held in and over the document."
+set ic:文書型>ic:権利管理 {0..n} ;
+
+
+#name "対象型"
+# "イベントや制度等の対象となる事物を表すクラス用語"
+#name@en "Target"
+#description@en "A class term to express a thing to be targeted for an event or system."
+class ic:対象型 {@ic:事物型} ;
+
+
+#name "制約"
+# "対象となる事物の制約を記述するためのプロパティ用語"
+#description@en "A restriction on the thing to be targeted."
+set ic:対象型>ic:制約 {0..n} ;
+
+
+#name "制約型"
+# "対象となる事物の制約条件を表すクラス用語"
+#name@en "Restriction"
+#description@en "A class term to express a restriction on a thing to be targeted."
+class ic:制約型 {@ic:概念型} ;
+
+
+/***
+* 概念型 に移動,  2017-10-19
+* 
+* #name "種別"
+* # "制約の種別の表記を記述するためのプロパティ用語"
+* #name@en "TODO"
+* #description@en "A category of the restriction."
+* set ic:制約型>ic:種別 {0..n} ;
+***/
+
+
+#name "制約対象"
+# "制約対象を記述するためのプロパティ用語"
+#description@en "A targeted thing to be restricted."
+set ic:制約型>ic:制約対象 {0..n} ;
+
+
+#name "説明"
+# "説明を記述するためのプロパティ用語"
+#description@en "A description of the restriction."
+set ic:制約型>ic:説明 {0..n} ;
+
+
+#name "コード制約型"
+# "対象となる事物の制約条件をコードによって指定するためのクラス用語"
+#name@en "Restriction by code"
+#description@en "A class term to express a restriction on a targeted thing as a code."
+class ic:コード制約型 {@ic:制約型} ;
+
+
+#name "制約コード"
+# "制約コードを記述するためのプロパティ用語"
+#description@en "A code specifying the restriction."
+set ic:コード制約型>ic:制約コード {0..n} ;
+
+
+#name "範囲制約型"
+# "対象となる事物の制約条件を数量の範囲によって指定するためのクラス用語"
+#name@en "Range restriction"
+#description@en "A class term to express a restriction on a targeted thing by means of a numerical range."
+class ic:範囲制約型 {@ic:制約型} ;
+
+
+#name "上限値"
+# "範囲制約の上限値を記述するためのプロパティ用語"
+#description@en "An upper limit of the range of the restriction."
+set ic:範囲制約型>ic:上限値 {0..n} ;
+
+
+#name "境界を含まない上限値"
+# "範囲制約の境界を含まない上限値を記述するためのプロパティ用語"
+#description@en "An upper limit of the range of the restriction, which excludes the boundary."
+set ic:範囲制約型>ic:境界を含まない上限値 {0..n} ;
+
+
+#name "下限値"
+# "範囲制約の下限値を記述するためのプロパティ用語"
+#description@en "An lower limit of the range of the restriction."
+set ic:範囲制約型>ic:下限値 {0..n} ;
+
+
+#name "境界を含まない下限値"
+# "範囲制約の境界を含まない下限値を記述するためのプロパティ用語"
+#description@en "An lower limit of the range of the restriction, which excludes the boundary."
+set ic:範囲制約型>ic:境界を含まない下限値 {0..n} ;
+
+
+#name "期間制約型"
+# "対象となる事物の制約条件を期間によって指定するためのクラス用語"
+#name@en "Period restriction"
+#description@en "A class term to express a restriction on a targeted thing by means of a period."
+class ic:期間制約型 {@ic:制約型} ;
+
+
+#name "期間"
+# "制約期間を記述するためのプロパティ用語"
+#description@en "A period to be restricted."
+set ic:期間制約型>ic:期間 {0..n} ;
+
+
+#name "体系"
+# "IDの体系を記述するためのプロパティ用語"
+#name@en "Reference system"
+#description@en "The system for specifying identifiers."
+property ic:体系 {@ic:ID体系型} ;
+
+
+#name "ID"
+# "事物に割り振られたID（識別子)を記述するためのプロパティ用語"
+#name@en "Identification"
+#description@en "The identifier assigned to a thing."
+property ic:ID {@ic:ID型} ;
+
+
+#name "座標参照系"
+# "座標の参照系を記述するためのプロパティ用語"
+#name@en "Coordinate reference system"
+#description@en "The reference system of latitude-longitude coordinates."
+property ic:座標参照系 {@ic:ID型} ;
+
+
+#name "シリアル番号"
+# "シリアル番号を記述するためのプロパティ用語"
+#name@en "Serial number"
+#description@en "The serial number."
+property ic:シリアル番号 {@ic:ID型} ;
+
+
+#name "製造者ID"
+# "製造者によって割り当てられたIDを記述するためのプロパティ用語"
+#name@en "Manufacturer identification"
+#description@en "The identifier assigned by a manufacturer."
+property ic:製造者ID {@ic:ID型} ;
+
+
+#name "地理識別子"
+# "場所の地理識別子を記述するためのプロパティ用語"
+#name@en "Geographic identification"
+#description@en "The geographical identifier of a location."
+property ic:地理識別子 {@ic:ID型} ;
+
+
+#name "販売業者ID"
+# "販売業者によって割り当てられたIDを記述するためのプロパティ用語"
+#name@en "Dealer identification"
+#description@en "The identifier assigned by a distributor."
+property ic:販売業者ID {@ic:ID型} ;
+
+
+#name "アクセス区間"
+# "アクセス方法の各区間の一覧を記述するためのプロパティ用語"
+#name@en "Section of route"
+#description@en "The list of sections of a route."
+property ic:アクセス区間 {@ic:アクセス区間型} ;
+
+
+#name "アクセス"
+# "アクセス方法を記述するためのプロパティ用語"
+#name@en "Route"
+#description@en "The route."
+property ic:アクセス {@ic:アクセス型} ;
+
+
+#name "関連イベント"
+# "関連するイベントを記述するためのプロパティ用語"
+#name@en "Related event"
+#description@en "The related event."
+property ic:関連イベント {@ic:イベント型} ;
+
+
+#name "料金"
+# "料金（施設、設備の利用料金やイベントの参加費など）を記述するためのプロパティ用語"
+#name@en "Fee"
+#description@en "The fee (such as a usage fee of a facility or equipment, and a participation fee of an event)."
+property ic:料金 {@ic:価格型} ;
+
+
+#name "価格"
+# "価格（製品の価格など）を記述するためのプロパティ用語"
+#name@en "Price"
+#description@en "The price (such as a product price)."
+property ic:価格 {@ic:価格型} ;
+
+
+#name "金額"
+# "金額を記述するためのプロパティ用語"
+#name@en "Amount"
+#description@en "The amount of money."
+property ic:金額 {@ic:金額型} ;
+
+
+#name "資本金"
+# "法人などの資本金を記述するためのプロパティ用語"
+#name@en "Capital"
+#description@en "The capital of a corporation."
+property ic:資本金 {@ic:金額型} ;
+
+
+#name "購入価格"
+# "購入価格を記述するためのプロパティ用語"
+#name@en "Purchased price"
+#description@en "The purchase price."
+property ic:購入価格 {@ic:金額型} ;
+
+
+#name "代表者"
+# "組織の代表者を記述するためのプロパティ用語"
+#name@en "Principal"
+#description@en "The representative of an organization."
+property ic:代表者 {@ic:構成員型} ;
+
+
+#name "座標データ書式"
+# "点、線、面などを表現するデータ文字列の書式を表すコードを記述するためのプロパティ用語"
+#name@en "Geometry encoding code"
+#description@en "The code specifying a format of a data string to express points, lines, and planes."
+property ic:座標データ書式 {@ic:コード型} ;
+
+#name "数量単位"
+# "数量の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Number unit code"
+#description@en "The code specifying a unit of quantity."
+deprecated property ic:数量単位 {@ic:コード型} ;
+
+
+#name "カレンダー"
+# "カレンダーの種類を表すコードを記述するためのプロパティ用語"
+#name@en "Calendar"
+#description@en "The code specifying a type of calendar."
+property ic:カレンダー {@ic:コード型} ;
+
+
+#name "国コード"
+# "国のコードを記述するためのプロパティ用語"
+#name@en "Country code"
+#description@en "The code specifying a country."
+property ic:国コード {@ic:コード型} ;
+
+
+#name "市区町村コード"
+# "市区町村のコードを記述するためのプロパティ用語"
+#name@en "City code"
+#description@en "The code specifying a municipality."
+property ic:市区町村コード {@ic:コード型} ;
+
+
+#name "住所コード"
+# "住所のコードを記述するためのプロパティ用語　※地方公共団体情報システム機構の地方公共団体コード住所など"
+#name@en "Address code"
+#description@en "The code specifying an address. Note: Such as Local Government Code Address by Japan Agency for Local Authority Information Systems."
+property ic:住所コード {@ic:コード型} ;
+
+
+#name "都道府県コード"
+# "都道府県のコードを記述するためのプロパティ用語"
+#name@en "Prefecture code"
+#description@en "The code specifying a prefecture."
+property ic:都道府県コード {@ic:コード型} ;
+
+
+#name "コード種別"
+# "コードの種別を記述するためのプロパティ用語"
+#name@en "Code list"
+#description@en "The type of a code."
+property ic:コード種別 {@ic:コードリスト型} ;
+
+
+#name "量種別"
+# "量の種別の表記を記述するためのプロパティ用語"
+#name@en "Quantity kind"
+#description@en "The category of a quantity expressed as text."
+property ic:量種別 {@xsd:string} ;
+
+
+#name "乗数"
+# "基本単位に対する変換乗数を記述するためのプロパティ用語"
+#name@en "Multiplier"
+#description@en "The conversion multiplier to be applied to the base unit."
+property ic:乗数 {@xsd:double} ;
+
+
+#name "原産国コード"
+# "原産国を表すコードを記述するためのプロパティ用語"
+#name@en "Origin country code"
+#description@en "The code specifying a country of origin."
+property ic:原産国コード {@ic:コード型} ;
+
+
+#name "国籍コード"
+# "国籍コードを記述するためのプロパティ用語　※住民基本台帳で利用されているものを使用"
+#name@en "Nationality code"
+#description@en "The code specifying a nationality. Note: Use the code in Basic Resident Registration."
+property ic:国籍コード {@ic:コード型} ;
+
+
+#name "種別コード"
+# "種別コードを記述するためのプロパティ用語"
+#name@en "Category code"
+#description@en "The code specifying a category."
+property ic:種別コード {@ic:コード型} ;
+
+
+#name "性別コード"
+# "性別コードを記述するためのプロパティ用語"
+#name@en "Gender code"
+#description@en "The code specifying gender."
+property ic:性別コード {@ic:コード型} ;
+
+
+#name "出生国コード"
+# "生まれた国のコードを記述するためのプロパティ用語"
+#name@en "Birth country code"
+#description@en "The code specifying a country of birth."
+property ic:出生国コード {@ic:コード型} ;
+
+
+#name "組織種別"
+# "組織の種別コード（株式会社など）を記述するためのプロパティ用語"
+#name@en "Category of organization"
+#description@en "The code specifying the category of an organization (such as a limited corporation)."
+property ic:組織種別 {@ic:コード型} ;
+
+
+#name "施設"
+# "施設を記述するためのプロパティ用語"
+#name@en "Facility"
+#description@en "The facility."
+property ic:施設 {@ic:施設型} ;
+
+
+#name "関連施設"
+# "関連する施設（上位施設、下位施設など）を記述するためのプロパティ用語"
+#name@en "Associated facility"
+#description@en "The associated facility (such as a parent or affiliated facility)."
+property ic:関連施設 {@ic:施設関連型} ;
+
+
+#name "管理者"
+# "管理している組織や人を記述するためのプロパティ用語"
+#name@en "Administrator"
+#description@en "The organization or person in charge of maintenance."
+property ic:管理者 {@ic:実体型} ;
+
+
+#name "入数"
+# "箱などに含まれる物の数量を記述するためのプロパティ用語"
+#name@en "Quantity per carton"
+#description@en "The quantity of items contained in a box, etc."
+property ic:入数 {@ic:数量型} ;
+
+
+#name "収容人数"
+# "収容人数を記述するためのプロパティ用語"
+#name@en "Max occupancy capacity"
+#description@en "The maximum number of people that a facility can accommodate."
+property ic:収容人数 {@ic:数量型} ;
+
+
+#name "期間"
+# "開始から終了までの時間範囲を記述するためのプロパティ用語"
+#name@en "Period"
+#description@en "The time range from start to end."
+property ic:期間 {@ic:期間スケジュール型} ;
+
+
+#name "利用可能時間"
+# "利用可能日と利用可能時間を記述するためのプロパティ用語"
+#name@en "Business hours"
+#description@en "The available date (or day) and opening hours."
+property ic:利用可能時間 {@ic:期間スケジュール型} ;
+
+
+#name "設備"
+# "設備を記述するためのプロパティ用語"
+#name@en "Equipment"
+#description@en "The equipment."
+property ic:設備 {@ic:設備型} ;
+
+
+#name "時間"
+# "所要時間を記述するためのプロパティ用語"
+#name@en "Duration / Required time"
+#description@en "The amount of time required."
+property ic:時間 {@ic:数量型} ;
+
+
+#name "設置者"
+# "設備などを設置した組織を記述するためのプロパティ用語"
+#name@en "Establisher"
+#description@en "The organization that installed an equipment, etc."
+property ic:設置者 {@ic:組織型} ;
+
+
+#name "組織"
+# "組織を記述するためのプロパティ用語"
+#name@en "Organization"
+#description@en "The organization."
+property ic:組織 {@ic:組織型} ;
+
+
+#name "関連組織"
+# "関連する組織を記述するためのプロパティ用語"
+#name@en "Associated organization"
+#description@en "The associated organization."
+property ic:関連組織 {@ic:組織関連型} ;
+
+
+#name "代理人"
+# "法定手続きなどの代理人となる組織を記述するためのプロパティ用語"
+#name@en "Agent"
+#description@en "The organization that acts as agent for legal procedures."
+property ic:代理人 {@ic:組織関連型} ;
+
+
+#name "建物"
+# "建物を記述するためのプロパティ用語"
+#name@en "Building"
+#description@en "The building."
+property ic:建物 {@ic:建物型} ;
+
+
+#name "駐車場"
+# "駐車場を記述するためのプロパティ用語"
+#name@en "Parking"
+#description@en "The parking area."
+property ic:駐車場 {@ic:駐車場型} ;
+
+
+#name "FAX番号"
+# "FAX番号を記述するためのプロパティ用語　※0-9 の数字及び + - ( ) , の文字のみを使用"
+#name@en "Fax number"
+#description@en "The facsimile number. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+property ic:FAX番号 {@ic:電話番号型} ;
+
+
+#name "携帯電話番号"
+# "携帯電話番号を記述するためのプロパティ用語　※0-9 の数字及び + - ( ) , の文字のみを使用"
+#name@en "Mobile telephone number"
+#description@en "The cellular phone number. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+property ic:携帯電話番号 {@ic:電話番号型} ;
+
+
+#name "電話番号"
+# "電話番号を記述するためのプロパティ用語　※0-9 の数字及び + - ( ) , の文字のみを使用"
+#name@en "Telephone number"
+#description@en "The telephone number. Note: Use '0 to 9' numeric characters and 'plus '+', minus '-', opening parenthesis '(', closing parenthesis ')', and comma ',' 'characters only."
+property ic:電話番号 {@ic:電話番号型} ;
+
+
+#name "有効開始日時"
+# "スケジュールが有効になる日時を記述するためのプロパティ用語"
+#name@en "Valid from"
+#description@en "The date and time when a schedule becomes effective."
+property ic:有効開始日時 {@ic:日時型} ;
+
+
+#name "有効終了日時"
+# "スケジュールが無効になる日時を記述するためのプロパティ用語"
+#name@en "Valid through"
+#description@en "The date and time when a schedule becomes ineffective."
+property ic:有効終了日時 {@ic:日時型} ;
+
+
+#name "開始日時"
+# "期間の開始日時を記述するためのプロパティ用語"
+#name@en "Start date and time"
+#description@en "The start date and time of a period."
+property ic:開始日時 {@ic:日時型} ;
+
+
+#name "終了日時"
+# "期間の終了日時を記述するためのプロパティ用語"
+#name@en "End date and time"
+#description@en "The end date and time of a period."
+property ic:終了日時 {@ic:日時型} ;
+
+#name "従業員数"
+# "法人などの従業員数を記述するためのプロパティ用語"
+#name@en "Number of employee"
+#description@en "The number of employees of the corporation, etc."
+deprecated property ic:従業員数 {@ic:人数型} ;
+
+
+#name "消費期限"
+# "消費期限を記述するためのプロパティ用語"
+#name@en "Expiry date"
+#description@en "The expiration date by which a product should be consumed."
+property ic:消費期限 {@ic:日付型} ;
+
+
+#name "製造日"
+# "製造日を記述するためのプロパティ用語"
+#name@en "Manufactured date"
+#description@en "The date of manufacture."
+property ic:製造日 {@ic:日付型} ;
+
+
+#name "死亡年月日"
+# "死亡年月日を記述するためのプロパティ用語"
+#name@en "Death date"
+#description@en "The date of death."
+property ic:死亡年月日 {@ic:日付型} ;
+
+
+#name "竣工日"
+# "建物の竣工日を記述するためのプロパティ用語"
+#name@en "Completion date"
+#description@en "The completion date of a building."
+property ic:竣工日 {@ic:日付型} ;
+
+
+#name "生年月日"
+# "生年月日を記述するためのプロパティ用語"
+#name@en "Birth date"
+#description@en "The date of birth."
+property ic:生年月日 {@ic:日付型} ;
+
+
+#name "構成員"
+# "構成員を記述するためのプロパティ用語"
+#name@en "Member"
+#description@en "The member."
+property ic:構成員 {@ic:人型} ;
+
+
+#name "名称"
+# "名称を記述するためのプロパティ用語"
+#name@en "Name"
+#description@en "The name."
+property ic:名称 {@ic:名称型} ;
+
+
+#name "延べ面積"
+# "建物の延べ床面積を記述するためのプロパティ用語"
+#name@en "Total floor area "
+#description@en "The total floor area of a building."
+property ic:延べ面積 {@ic:面積型} ;
+
+
+#name "建築面積"
+# "建築面積を記述するためのプロパティ用語"
+#name@en "Building area"
+#description@en "The building area."
+property ic:建築面積 {@ic:面積型} ;
+
+
+#name "敷地面積"
+# "敷地面積を記述するためのプロパティ用語"
+#name@en "Site area"
+#description@en "The ground area."
+property ic:敷地面積 {@ic:面積型} ;
+
+
+#name "連絡先"
+# "連絡先を記述するためのプロパティ用語"
+#name@en "Contact"
+#description@en "The contact."
+property ic:連絡先 {@ic:連絡先型} ;
+
+
+#name "地理座標"
+# "場所の経緯度座標を記述するためのプロパティ用語"
+#name@en "Associated geometry"
+#description@en "The latitude-longitude coordinates of a location."
+property ic:地理座標 {@ic:座標型} ;
+
+
+#name "氏名"
+# "人の氏名を記述するためのプロパティ用語"
+#name@en "Name of person"
+#description@en "The name of a person."
+property ic:氏名 {@ic:氏名型} ;
+
+
+#name "担当者名"
+# "担当者の氏名を記述するためのプロパティ用語"
+#name@en "Name of contact person"
+#description@en "The name of a contact person."
+property ic:担当者名 {@ic:氏名型} ;
+
+#name "関係者"
+# "関係する組織や人を記述するためのプロパティ用語"
+#name@en "Issuer"
+#description@en "The involved organization or person."
+deprecated property ic:関係者 {@ic:実体型} ;
+
+
+#name "関与"
+# "関連する組織や人（関連性の記述を含む）を記述するためのプロパティ用語"
+#name@en "Participation"
+#description@en "The associated organization or person (including a description of the relationship)."
+property ic:関与 {@ic:関与型} ;
+
+
+#name "所有者"
+# "所有者を記述するためのプロパティ用語"
+#name@en "Owner"
+#description@en "The owner."
+property ic:所有者 {@ic:実体型} ;
+
+
+#name "住所"
+# "住所を記述するためのプロパティ用語"
+#name@en "Address"
+#description@en "The address."
+property ic:住所 {@ic:住所型} ;
+
+
+#name "本籍"
+# "本籍を記述するためのプロパティ用語"
+#name@en "Domicile of origin"
+#description@en "The registered domicile by birth."
+property ic:本籍 {@ic:住所型} ;
+
+
+#name "重量"
+# "重量を記述するためのプロパティ用語"
+#name@en "Weight"
+#description@en "The weight."
+property ic:重量 {@ic:重量型} ;
+
+
+#name "場所"
+# "場所を記述するためのプロパティ用語"
+#name@en "Location"
+#description@en "The location."
+property ic:場所 {@ic:場所型} ;
+
+
+#name "出生地"
+# "生まれた場所を記述するためのプロパティ用語"
+#name@en "Birth place"
+#description@en "The birth place."
+property ic:出生地 {@ic:住所型} ;
+
+
+#name "活動状況"
+# "組織などの活動状況を記述するためのプロパティ用語"
+#name@en "Status"
+#description@en "The activity status of an organization, etc."
+property ic:活動状況 {@ic:状況型} ;
+
+
+#name "開催場所"
+# "イベントなどの開催場所を記述するためのプロパティ用語"
+#name@en "Location"
+#description@en "The venue of a event, etc."
+property ic:開催場所 {@ic:地物型} ;
+
+
+#name "地物"
+# "関連する地物（施設、建物、土地など）を記述するためのプロパティ用語"
+#name@en "Feature"
+#description@en "The associated feature (such as a facility, building, or land)."
+property ic:地物 {@ic:地物型} ;
+
+
+#name "始点"
+# "始点となる地物を記述するためのプロパティ用語"
+#name@en "Origin"
+#description@en "The feature that serves as an origin."
+property ic:始点 {@ic:地物型} ;
+
+
+#name "終点"
+# "終点となる地物を記述するためのプロパティ用語"
+#name@en "Destination"
+#description@en "The feature that serves as a destination."
+property ic:終点 {@ic:地物型} ;
+
+
+#name "設置地点"
+# "設備などが設置されている地物（施設や建物など）を記述するためのプロパティ用語"
+#name@en "Location of installation"
+#description@en "The feature in which an equipment is installed. (Such as a facility or building.)"
+property ic:設置地点 {@ic:地物型} ;
+
+
+#name "測地高度"
+# "測地高度を記述するためのプロパティ用語"
+#name@en "Altitude"
+#description@en "The geodetic height."
+property ic:測地高度 {@ic:長さ型} ;
+
+
+#name "高さ"
+# "形状の高さを記述するためのプロパティ用語"
+#name@en "Height"
+#description@en "The height of the shape."
+property ic:高さ {@ic:長さ型} ;
+
+
+#name "長さ"
+# "形状の長さを記述するためのプロパティ用語"
+#name@en "Length"
+#description@en "The length of the shape."
+property ic:長さ {@ic:長さ型} ;
+
+
+#name "幅"
+# "形状の幅を記述するためのプロパティ用語"
+#name@en "Width"
+#description@en "The width of the shape."
+property ic:幅 {@ic:長さ型} ;
+
+
+#name "最高の高さ"
+# "最高点の高さを記述するためのプロパティ用語"
+#name@en "Maximum height"
+#description@en "The height at the highest point."
+property ic:最高の高さ {@ic:長さ型} ;
+
+
+#name "発生日"
+# "状況などの発生日時を記述するためのプロパティ用語"
+#name@en "Issued date"
+#description@en "The date and time of occurrence of state of affairs, etc."
+property ic:発生日 {@ic:日時型} ;
+
+
+#name "開催日"
+# "イベントなどが開催される日付を記述するためのプロパティ用語"
+#name@en "Date for event"
+#description@en "The date on which an event, etc. is held."
+property ic:開催日 {@ic:日付型} ;
+
+
+#name "開始日"
+# "イベントなどの開始日を記述するためのプロパティ用語"
+#name@en "Start date"
+#description@en "The starting date of an event, etc."
+property ic:開始日 {@ic:日付型} ;
+
+
+#name "事業年度開始日"
+# "事業年度の開始日を記述するためのプロパティ用語"
+#name@en "Fiscal year start day"
+#description@en "The start date of the business year."
+property ic:事業年度開始日 {@ic:日付型} ;
+
+
+#name "終了日"
+# "イベントなどの終了日を記述するためのプロパティ用語"
+#name@en "End date"
+#description@en "The closing date of the event, etc."
+property ic:終了日 {@ic:日付型} ;
+
+
+#name "使用期限"
+# "使用期限を記述するためのプロパティ用語"
+#name@en "Use-by date"
+#description@en "The expiration date by which a product should be used."
+property ic:使用期限 {@ic:日付型} ;
+
+
+#name "賞味期限"
+# "賞味期限を記述するためのプロパティ用語"
+#name@en "Best before date"
+#description@en "The best-before-date of a product."
+property ic:賞味期限 {@ic:日付型} ;
+
+
+#name "設置日"
+# "設備などの設置日を記述するためのプロパティ用語"
+#name@en "Installation date"
+#description@en "The installation date of an equipment, etc."
+property ic:設置日 {@ic:日付型} ;
+
+
+#name "設立日"
+# "組織などの設立日を記述するためのプロパティ用語"
+#name@en "Established date"
+#description@en "The date of establishment of an organization, etc."
+property ic:設立日 {@ic:日付型} ;
+
+#name "面積単位"
+# "面積の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Area unit code"
+#description@en "The code specifying a unit of area."
+deprecated property ic:面積単位 {@uncefactCode:MeasurementUnitCommonCodeContentType} ;
+
+#name "時間単位"
+# "時間の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Time unit code"
+#description@en "The code specifying a unit of time length."
+deprecated property ic:時間単位 {@uncefactDuration:MeasurementUnitCommonCodeDurationContentType} ;
+
+
+#name "通貨コード"
+# "通貨コードを記述するためのプロパティ用語"
+#name@en "Currency code"
+#description@en "The code specifying a currency."
+property ic:通貨コード {@uncefactISO4217:ISO3AlphaCurrencyCodeContentType} ;
+
+#name "長さ単位"
+# "長さの単位を表すコードを記述するためのプロパティ用語"
+#name@en "Length unit code"
+#description@en "The code specifying a unit of length."
+deprecated property ic:長さ単位 {@uncefactLinear:MeasurementUnitCommonCodeLinearContentType} ;
+
+#name "容量単位"
+# "容量の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Volume unit code"
+#description@en "The code specifying a unit of volume."
+deprecated property ic:容量単位 {@uncefactVolume:MeasurementUnitCommonCodeVolumeContentType} ;
+
+#name "重量単位"
+# "重量の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Weight unit code"
+#description@en "The code specifying a unit of weight."
+deprecated property ic:重量単位 {@uncefactWeight:MeasurementUnitCommonCodeWeightContentType} ;
+
+
+#name "単位"
+# "計測値の単位を表すコードを記述するためのプロパティ用語"
+#name@en "Unit"
+#description@en "The code specifying a unit of measured values."
+property ic:単位 {@ic:単位コード型} ;
+
+
+#name "単位表記"
+# "単位の文字列による表現を記述するためのプロパティ用語"
+#name@en "Unit text"
+#description@en "The unit expressed as a string."
+property ic:単位表記 {@xsd:string} ;
+
+#name "URI"
+# "参照のためのURIを記述するためのプロパティ用語"
+#name@en "URI"
+#description@en "The URL for references."
+deprecated property ic:URI {@xsd:anyURI} ;
+
+
+#name "Webサイト"
+# "Webサイトを参照するURLを記述するためのプロパティ用語"
+#name@en "Web site"
+#description@en "The URL that references a Web site."
+property ic:Webサイト {@xsd:anyURI} ;
+
+
+#name "画像"
+# "画像を参照するURLを記述するためのプロパティ用語"
+#name@en "Picture"
+#description@en "The URL that references an image."
+property ic:画像 {@xsd:anyURI} ;
+
+
+#name "参照"
+# "追加情報などを参照するURLを記述するためのプロパティ用語"
+#name@en "Reference"
+#description@en "The URL that references additional information."
+property ic:参照 {@ic:参照型} ;
+
+
+#name "自動認識ID"
+# "自動認識ID（バーコードや二次元コードの画像など）が表すURLを記述するためのプロパティ用語"
+#name@en "Barcode identification"
+#description@en "The URL expressed by the automatic recognition identifier (such as an image of bar code and two-dimensional code)."
+property ic:自動認識ID {@xsd:anyURI} ;
+
+
+#name "地図"
+# "地図を参照するURLを記述するためのプロパティ用語"
+#name@en "Map"
+#description@en "The URL that references a map."
+property ic:地図 {@xsd:anyURI} ;
+
+
+#name "標準型日付"
+# "日付を記述するためのプロパティ用語　※XMLのxsd:date型に準拠したもの"
+#name@en "Date"
+#description@en "The date. Note: This shall comply with xsd:date type of XML."
+property ic:標準型日付 {@xsd:date} ;
+
+
+#name "標準型日時"
+# "日時を記述するためのプロパティ用語　※XMLのxsd:dateTime型に準拠したもの"
+#name@en "Date and time"
+#description@en "The date and time. Note: This shall comply with xsd:date type of XML."
+property ic:標準型日時 {@xsd:dateTime} ;
+
+
+#name "数値"
+# "数値を記述するためのプロパティ用語"
+#name@en "Value"
+#description@en "The numerical value."
+property ic:数値 {@xsd:decimal} ;
+
+
+#name "地下階数"
+# "建物の地下階数を記述するためのプロパティ用語"
+#name@en "Number of under ground floors"
+#description@en "The number of underground floors of a building."
+property ic:地下階数 {@xsd:decimal} ;
+
+
+#name "地上階数"
+# "建物の地上階数を記述するためのプロパティ用語"
+#name@en "Number of above ground floors"
+#description@en "The number of aboveground floors of a building."
+property ic:地上階数 {@xsd:decimal} ;
+
+
+#name "秒"
+# "日時などの秒の値を記述するためのプロパティ用語"
+#name@en "Second"
+#description@en "The value of second in date and time."
+property ic:秒 {@xsd:decimal} ;
+
+
+#name "月"
+# "日付や日時などの月の値を記述するためのプロパティ用語"
+#name@en "Month"
+#description@en "The value of month in date, and date and time."
+property ic:月 {@xsd:integer} ;
+
+
+#name "時"
+# "日時などの時の値を記述するためのプロパティ用語"
+#name@en "Hour"
+#description@en "The value of time in date and time."
+property ic:時 {@xsd:integer} ;
+
+
+#name "収容台数"
+# "駐車場の収容可能台数を記述するためのプロパティ用語"
+#name@en "Parking capacity"
+#description@en "The maximum number of vehicles that a parking area can accommodate."
+property ic:収容台数 {@xsd:integer} ;
+
+
+#name "年"
+# "日付や日時などの年の値を記述するためのプロパティ用語"
+#name@en "Year"
+#description@en "The value of year in date, and date and time."
+property ic:年 {@xsd:integer} ;
+
+
+#name "日"
+# "日付や日時などの日の値を記述するためのプロパティ用語"
+#name@en "Day"
+#description@en "The value of day in date, and date and time."
+property ic:日 {@xsd:integer} ;
+
+
+#name "分"
+# "日時などの分の値を記述するためのプロパティ用語"
+#name@en "Minute"
+#description@en "The value of minute in date and time."
+property ic:分 {@xsd:integer} ;
+
+#name "構成員数"
+# "構成員の数を記述するためのプロパティ用語"
+#name@en "Number of members"
+#description@en "The number of members."
+deprecated property ic:構成員数 {@xsd:nonNegativeInteger} ;
+
+
+#name "人数"
+# "人数を記述するためのプロパティ用語"
+#name@en "Head count"
+#description@en "The number of people."
+property ic:人数 {@xsd:nonNegativeInteger} ;
+
+
+#name "Eメールアドレス"
+# "電子メールアドレスを記述するためのプロパティ用語"
+#name@en "Email address"
+#description@en "The electronic mail address."
+property ic:Eメールアドレス {@xsd:string} ;
+
+
+#name "緯度"
+# "緯度を記述するためのプロパティ用語　※-90から+90で記載"
+#name@en "Latitude"
+#description@en "The latitude. Note: Specify a value between -90 and +90."
+property ic:緯度 {@xsd:string} ;
+
+
+#name "緯度経度書式"
+# "度、分、秒の書式を記述するためのプロパティ用語　※書式はiso6709に準拠する"
+#name@en "Latitude and longitude format"
+#description@en "The format to express degree, minutes and seconds. Note: The format shall comply with ISO 6709 standard."
+property ic:緯度経度書式 {@xsd:string} ;
+
+
+#name "色"
+# "色の表記を記述するためのプロパティ用語"
+#name@en "Color"
+#description@en "The color expressed as text."
+property ic:色 {@xsd:string} ;
+
+
+#name "開催期日"
+# "スケジュールが有効となる日を記述するためのプロパティ用語　※スケジュールの種別が「週間」の場合は曜日、「月間」の場合は月の中の日、「年間」の場合は年の中の月日を指定する。"
+#name@en "Schedule day"
+#description@en "The day on which the schedule becomes effective. Note: If the schedule category is 'weekly', then select a day of the week. If it is 'monthly' or 'yearly', then select a date in the month or the year respectively."
+property ic:開催期日 {@xsd:string} ;
+
+
+#name "外部利用可否"
+# "施設や設備などの外部利用可否の記述のためのプロパティ用語"
+#name@en "Limitation of use"
+#description@en "The textual description of whether or not a facility or equipment is available for use by outsiders."
+property ic:外部利用可否 {@xsd:string} ;
+
+
+#name "概要"
+# "概要説明を記述するためのプロパティ用語"
+#name@en "Summary"
+#description@en "The overview description."
+property ic:概要 {@xsd:string} ;
+
+
+#name "カナ表記"
+# "カタカナ表記を記述するためのプロパティ用語"
+#name@en "Full name in kana"
+#description@en "The textual expression in Katakana."
+property ic:カナ表記 {@xsd:string} ;
+
+
+#name "キーワード"
+# "キーワードの記述のためのプロパティ用語"
+#name@en "Keyword"
+#description@en "The description of keywords."
+property ic:キーワード {@xsd:string} ;
+
+
+#name "規制情報"
+# "規制に関する情報（取り扱い上の注意など）を記述するためのプロパティ用語"
+#name@en "Regulation"
+#description@en "The regulatory information (including handling precautions)."
+property ic:規制情報 {@xsd:string} ;
+
+
+#name "区"
+# "政令指定都市の区の名前を記述するためのプロパティ用語"
+#name@en "Ward"
+#description@en "The name of a ward in a ordinance-designated city."
+property ic:区 {@xsd:string} ;
+
+
+#name "国"
+# "国名を記述するためのプロパティ用語"
+#name@en "Country"
+#description@en "The country name."
+property ic:国 {@xsd:string} ;
+
+
+#name "形態"
+# "製品などの形態の説明を記述するためのプロパティ用語"
+#name@en "Form of delivery"
+#description@en "The description of the form of a product, etc."
+property ic:形態 {@xsd:string} ;
+
+
+#name "経度"
+# "経度を記述するためのプロパティ用語　※-180から+180で記載"
+#name@en "Longitude"
+#description@en "The longitude. Note: Specify a value between -180 and +180."
+property ic:経度 {@xsd:string} ;
+
+
+#name "原産国"
+# "原産国名を記述するためのプロパティ用語"
+#name@en "Origin country"
+#description@en "The name of a country of origin."
+property ic:原産国 {@xsd:string} ;
+
+
+#name "号"
+# "号、住居番号の表記を記述するためのプロパティ用語"
+#name@en "Go"
+#description@en "The building number or house number expressed as text."
+property ic:号 {@xsd:string} ;
+
+
+#name "国籍"
+# "国籍の表記を記述するためのプロパティ用語"
+#name@en "Nationality"
+#description@en "The nationality expressed as text."
+property ic:国籍 {@xsd:string} ;
+
+
+#name "サイズ"
+# "サイズの表記を記述するためのプロパティ用語"
+#name@en "Size"
+#description@en "The size expressed as text."
+property ic:サイズ {@xsd:string} ;
+
+
+#name "座標データ"
+# "点、線、面などを表現するデータ文字列の書式を記述するためのプロパティ用語"
+#name@en "Coordinate value"
+#description@en "The format of a data string to express points, lines, and planes."
+property ic:座標データ {@xsd:string} ;
+
+
+#name "参加方法"
+# "イベントなどへの参加方法の説明を記述するためのプロパティ用語"
+#name@en "Application for participation"
+#description@en "The explanation on how to join an event, etc."
+property ic:参加方法 {@xsd:string} ;
+
+
+#name "時間帯"
+# "時間帯を記述するためのプロパティ用語　※協定世界時からの時間差"
+#name@en "Time zone"
+#description@en "The time zone. Note: The time difference from the Coordinated Universal Time."
+property ic:時間帯 {@xsd:string} ;
+
+
+#name "識別値"
+# "IDやコードの値を記述するためのプロパティ用語"
+#name@en "Identification value"
+#description@en "The value of an identifier or code."
+property ic:識別値 {@xsd:string} ;
+
+
+#name "事業種目"
+# "事業の種類の表記（販売業など）を記述するためのプロパティ用語"
+#name@en "Business category"
+#description@en "The category of a business (such as a distributor) expressed as text."
+property ic:事業種目 {@xsd:string} ;
+
+
+#name "市区町村"
+# "市区町村名を記述するためのプロパティ用語"
+#name@en "City"
+#description@en "The name of a municipality."
+property ic:市区町村 {@xsd:string} ;
+
+
+#name "始点備考"
+# "始点についての備考を記述するためのプロパティ用語"
+#name@en "Note for origin"
+#description@en "The remarks on the origin."
+property ic:始点備考 {@xsd:string} ;
+
+
+#name "終点備考"
+# "終点についての備考を記述するためのプロパティ用語"
+#name@en "Note for destination"
+#description@en "The remarks on the destination."
+property ic:終点備考 {@xsd:string} ;
+
+
+#name "種別"
+# "様々な事物の種別の表記を記述するためのプロパティ用語"
+#name@en "Category"
+#description@en "The category of various things expressed as text."
+property ic:種別 {@xsd:string} ;
+
+#name "詳細"
+# "状況などの詳細説明を記述するためのプロパティ用語"
+#name@en "Detail description"
+#description@en "The detailed description of state of affairs, etc."
+deprecated property ic:詳細 {@xsd:string} ;
+
+
+#name "状態"
+# "状態を記述するためのプロパティ用語"
+#name@en "Condition"
+#description@en "The state."
+property ic:状態 {@xsd:string} ;
+
+
+#name "使用方法"
+# "使用方法の説明を記述するためのプロパティ用語"
+#name@en "Usage"
+#description@en "The explanation of usage instructions."
+property ic:使用方法 {@xsd:string} ;
+
+
+#name "姓"
+# "氏名の姓の表記を記述するためのプロパティ用語"
+#name@en "Family name"
+#description@en "The family name expressed as text."
+property ic:姓 {@xsd:string} ;
+
+
+#name "姓カナ表記"
+# "氏名の姓のカタカナ表記を記述するためのプロパティ用語"
+#name@en "Family name in kana"
+#description@en "The textual expression of a family name in Katakana."
+property ic:姓カナ表記 {@xsd:string} ;
+
+
+#name "製造者"
+# "製造者名を記述するためのプロパティ用語"
+#name@en "Manufacturer"
+#description@en "The name of a manufacturer."
+property ic:製造者 {@xsd:string} ;
+
+
+#name "姓名"
+# "氏名（姓、名）の表記を記述するためのプロパティ用語"
+#name@en "Full name"
+#description@en "The full name (family and given name) expressed as text."
+property ic:姓名 {@xsd:string} ;
+
+
+#name "性別"
+# "性別の表記を記述するためのプロパティ用語"
+#name@en "Gender"
+#description@en "The gender expressed as text."
+property ic:性別 {@xsd:string} ;
+
+
+#name "姓名カナ表記"
+# "氏名（姓、名）のカタカナ表記を記述するためのプロパティ用語"
+#name@en "Full name in kana"
+#description@en "The textual expression of a full name (family and given name) in Katakana."
+property ic:姓名カナ表記 {@xsd:string} ;
+
+
+#name "姓名ローマ字表記"
+# "氏名（姓、名）のローマ字表記を記述するためのプロパティ用語"
+#name@en "Full name in Romaji (Romanization of Japanese/Romanized Japanese)"
+#description@en "The textual expression of a full name (family and given name) in the Roman alphabet."
+property ic:姓名ローマ字表記 {@xsd:string} ;
+
+
+#name "姓ローマ字表記"
+# "氏名の姓のローマ字表記を記述するためのプロパティ用語"
+#name@en "Family name in Romaji (Romanization of Japanese/Romanized Japanese)"
+#description@en "The textual expression of a family name in the Roman alphabet."
+property ic:姓ローマ字表記 {@xsd:string} ;
+
+
+#name "設置位置"
+# "設備などの設置場所の表記（受付横など）を記述するためのプロパティ用語"
+#name@en "Place of installation"
+#description@en "The location of an equipment, etc. installed (such as beside a reception desk) expressed as text."
+property ic:設置位置 {@xsd:string} ;
+
+
+#name "説明"
+# "説明を記述するためのプロパティ用語"
+#name@en "Description"
+#description@en "The description."
+property ic:説明 {@xsd:string} ;
+
+
+#name "送付先"
+# "郵便物送付先の住所（私書箱など）を記述するためのプロパティ用語"
+#name@en "Mailing address"
+#description@en "The mailing address (such as a private mail box)."
+property ic:送付先 {@xsd:string} ;
+
+#name "測定単位"
+# "測定の単位を記述するためのプロパティ用語"
+#name@en "Unit of measurement"
+#description@en "The unit of measurement."
+deprecated property ic:測定単位 {@xsd:string} ;
+
+#name "測定名称"
+# "測定方法の名称を記述するためのプロパティ用語"
+#name@en "Name of measurement"
+#description@en "The name of a measurement method."
+deprecated property ic:測定名称 {@xsd:string} ;
+
+
+#name "組織種別位置"
+# "組織名称中の組織種別の記載位置の表記（前、後、など）を記述するためのプロパティ用語"
+#name@en "Position of organization category in name"
+#description@en "The position of the organization type description within an organization name (as a prefix or suffix, etc.) expressed as text."
+property ic:組織種別位置 {@xsd:string} ;
+
+
+#name "対応言語"
+# "連絡の際に利用可能な言語名を記述するためのプロパティ用語"
+#name@en "Available language"
+#description@en "The language available when contacting."
+property ic:対応言語 {@xsd:string} ;
+
+#name "対象者"
+# "対象となる人に関する説明を記述するためのプロパティ用語"
+#name@en "Target persons"
+#description@en "The explanation on an eligible participant."
+deprecated property ic:対象者 {@xsd:string} ;
+
+
+#name "関与者"
+# "関連する組織や人を記述するためのプロパティ用語"
+#name@en "Participator"
+#description@en "The associated organization or person."
+property ic:関与者 {@ic:実体型} ;
+
+
+#name "担当者役職"
+# "担当者の役職の表記を記述するためのプロパティ用語"
+#name@en "Title of contact person"
+#description@en "The title of a person in charge expressed as text."
+property ic:担当者役職 {@xsd:string} ;
+
+
+#name "駐車場種別"
+# "駐車場の種別の表記を記述するためのプロパティ用語"
+#name@en "Category of parking"
+#description@en "The category of a parking area expressed as text."
+property ic:駐車場種別 {@xsd:string} ;
+
+
+#name "丁目"
+# "丁目の表記を記述するためのプロパティ用語"
+#name@en "Chome"
+#description@en "The city district number expressed as text."
+property ic:丁目 {@xsd:string} ;
+
+
+#name "通称"
+# "正式な名称以外に一般的に使用されている名称を記述するためのプロパティ用語"
+#name@en "Alternative name"
+#description@en "The generally used name apart from its official name."
+property ic:通称 {@xsd:string} ;
+
+
+#name "都道府県"
+# "都道府県名を記述するためのプロパティ用語"
+#name@en "Prefecture"
+#description@en "The name of a prefecture."
+property ic:都道府県 {@xsd:string} ;
+
+
+#name "名"
+# "氏名の名の表記を記述するためのプロパティ用語"
+#name@en "Given name"
+#description@en "The given name expressed as text."
+property ic:名 {@xsd:string} ;
+
+
+#name "内線番号"
+# "電話の内線番号を記述するためのプロパティ用語"
+#name@en "Extension number"
+#description@en "The extension number of a telephone number."
+property ic:内線番号 {@xsd:string} ;
+
+
+#name "名カナ表記"
+# "氏名の名のカタカナ表記を記述するためのプロパティ用語"
+#name@en "Given name in kana"
+#description@en "The textual expression of a given name in Katakana."
+property ic:名カナ表記 {@xsd:string} ;
+
+
+#name "名ローマ字表記"
+# "氏名の名のローマ字表記を記述するためのプロパティ用語"
+#name@en "Given name in Romaji (Romanization of Japanese/Romanized Japanese)"
+#description@en "The textual expression of a given name in the Roman alphabet."
+property ic:名ローマ字表記 {@xsd:string} ;
+
+
+#name "年号"
+# "日付や日時などの元号を記述するためのプロパティ用語"
+#name@en "Era"
+#description@en "The Japanese era in date, and date and time."
+property ic:年号 {@xsd:string} ;
+
+
+#name "バージョン"
+# "バージョン情報を記述するためのプロパティ用語"
+#name@en "Version"
+#description@en "The version information."
+property ic:バージョン {@xsd:string} ;
+
+
+#name "バリアフリー"
+# "設備などのバリアフリーに関する情報の記述のためのプロパティ用語"
+#name@en "Barrier free"
+#description@en "The description of information regarding accessibility to an equipment, etc."
+property ic:バリアフリー {@xsd:string} ;
+
+
+#name "番地"
+# "番、街区の表記を記述するためのプロパティ用語"
+#name@en "Banchi"
+#description@en "The block number or town block number expressed as text."
+property ic:番地 {@xsd:string} ;
+
+
+#name "番地補足"
+# "番地の前の、「東」「北」「浜」「甲」「イ」などの文字を記述するためのプロパティ用語"
+#name@en "Note for banchi"
+#description@en "The prefix string such as '東 (East)' , '北 (North)',  '浜 (Coast)', '甲' and 'イ' (characters representing item number) specified prior to a block number."
+property ic:番地補足 {@xsd:string} ;
+
+
+#name "販売業者"
+# "販売業者名を記述するためのプロパティ用語"
+#name@en "Dealer"
+#description@en "The name of a distributor."
+property ic:販売業者 {@xsd:string} ;
+
+
+#name "備考"
+# "備考を記述するためのプロパティ用語　※補足情報などがある場合に記述"
+#name@en "Note"
+#description@en "The remarks. Note: Specify when there is any additional information."
+property ic:備考 {@xsd:string} ;
+
+
+#name "表記"
+# "文字列による表記を記述するためのプロパティ用語"
+#name@en "Textual expression"
+#description@en "The textual expression using a text string."
+property ic:表記 {@xsd:string} ;
+
+
+#name "ビル番号"
+# "ビルの番号の表記（号棟など）を記述するためのプロパティ用語"
+#name@en "Building number"
+#description@en "The building number (such as unit number) expressed as text."
+property ic:ビル番号 {@xsd:string} ;
+
+
+#name "ビル名"
+# "ビル名を記述するためのプロパティ用語"
+#name@en "Building name"
+#description@en "The building name."
+property ic:ビル名 {@xsd:string} ;
+
+
+#name "ミドルネーム"
+# "ミドルネームの表記を記述するためのプロパティ用語"
+#name@en "Middle name"
+#description@en "The middle name expressed as text."
+property ic:ミドルネーム {@xsd:string} ;
+
+
+#name "ミドルネームカナ表記"
+# "ミドルネームのカタカナ表記を記述するためのプロパティ用語"
+#name@en "Middle name in kana"
+#description@en "The textual expression of a middle name in Katakana."
+property ic:ミドルネームカナ表記 {@xsd:string} ;
+
+
+#name "ミドルネームローマ字表記"
+# "ミドルネームのローマ字表記を記述するためのプロパティ用語"
+#name@en "Middle name in Romaji (Romanization of Japanese/Romanized Japanese)"
+#description@en "The textual expression of a middle name in the Roman alphabet."
+property ic:ミドルネームローマ字表記 {@xsd:string} ;
+
+
+#name "役割"
+# "人、組織、施設などの役割の表記を記述するためのプロパティ用語"
+#name@en "Role of member"
+#description@en "The role of a person, organization, or facility, etc. expressed as text."
+property ic:役割 {@xsd:string} ;
+
+
+#name "役割コード"
+# "人、組織、施設などの役割を表すコードを記述するためのプロパティ用語"
+#name@en "Code for role of member"
+#description@en "The code specifying a role of a person, organization, or facility, etc."
+property ic:役割コード {@ic:コード型} ;
+
+
+#name "郵便番号"
+# "郵便番号を記述するためのプロパティ用語　※0-9の数字7桁"
+#name@en "Post code"
+#description@en "The postal code. Note: A string consisting of seven numeric characters of '0 to 9'."
+property ic:郵便番号 {@xsd:string} ;
+
+
+#name "要約"
+# "説明の要約を記述するためのプロパティ用語"
+#name@en "Abstract of description"
+#description@en "The abstract of description."
+property ic:要約 {@xsd:string} ;
+
+
+#name "略称アルファベット"
+# "頭文字などを使った略称表記を記述するためのプロパティ用語"
+#name@en "Alphabetical abbreviation"
+#description@en "The abbreviated expression using initial letters, etc."
+property ic:略称アルファベット {@xsd:string} ;
+
+
+#name "利用者"
+# "利用者の条件を記述するためのプロパティ用語　※利用者に限定条件がある場合"
+#name@en "User"
+#description@en "The condition of eligible users. Note: When limiting conditions are specified for users."
+property ic:利用者 {@xsd:string} ;
+
+
+#name "ローマ字表記"
+# "ローマ字表記を記述するためのプロパティ用語"
+#name@en "Full name in Romaji (Romanization of Japanese/Romanized Japanese)"
+#description@en "The textual expression in the Roman alphabet."
+property ic:ローマ字表記 {@xsd:string} ;
+
+
+#name "路線"
+# "アクセス区間に用いる交通の路線（事業者及び路線名、バス系統など）を記述するためのプロパティ用語"
+#name@en "Route / Line"
+#description@en "The line of transportation used in an section of the route (such as a transport service provider, line name, and bus route)."
+property ic:路線 {@xsd:string} ;
+
+
+#name "ロット番号"
+# "製造ロットの番号を記述するためのプロパティ用語"
+#name@en "Lot number"
+#description@en "The manufacturing lot number."
+property ic:ロット番号 {@xsd:string} ;
+
+
+#name "構造"
+# "建物などの構造の表記を記述するためのプロパティ用語"
+#name@en "Structure"
+#description@en "The structure of a building, etc. expressed as text."
+property ic:構造 {@xsd:string} ;
+
+
+#name "主要用途"
+# "建物などの主要用途の表記を記述するためのプロパティ用語"
+#name@en "Main purpose"
+#description@en "The major use of a building, etc. expressed as text."
+property ic:主要用途 {@xsd:string} ;
+
+
+#name "出生国"
+# "生まれた国名を記述するためのプロパティ用語"
+#name@en "Birth country"
+#description@en "The name of a country of birth."
+property ic:出生国 {@xsd:string} ;
+
+
+#name "町名"
+# "町域、または市区町村の下の行政区分の表記を記述するためのプロパティ用語"
+#name@en "Chomei"
+#description@en "The town area or administrative division under municipality expressed as text."
+property ic:町名 {@xsd:string} ;
+
+
+#name "通貨"
+# "通貨名を記述するためのプロパティ用語"
+#name@en "Currency"
+#description@en "The name of a currency."
+property ic:通貨 {@xsd:string} ;
+
+
+#name "発行者"
+# "IDやコードリストなどの発行主体を記述するためのプロパティ用語"
+#name@en "Issuer name"
+#description@en "The issuing entity of an ID system or code list, etc."
+property ic:発行者 {@ic:実体型} ;
+
+
+#name "部屋番号"
+# "部屋番号の表記（階数、号室など）を記述するためのプロパティ用語"
+#name@en "Room number"
+#description@en "The room number (such as floor and room number) expressed as text."
+property ic:部屋番号 {@xsd:string} ;
+
+
+#name "方書"
+# "方書 (私書箱も含む)を記述するためのプロパティ用語"
+#name@en "Katagaki"
+#description@en "The C/O specification (including a private mail box)."
+property ic:方書 {@xsd:string} ;
+
+
+#name "開始時間"
+# "場所やサービスなどの開始時間を記述するためのプロパティ用語"
+#name@en "Start time"
+#description@en "The starting time of a place or service, etc."
+property ic:開始時間 {@xsd:time} ;
+
+
+#name "終了時間"
+# "場所やサービスなどの終了時間を記述するためのプロパティ用語"
+#name@en "End time"
+#description@en "The closing time of a place or service, etc."
+property ic:終了時間 {@xsd:time} ;
+
+
+#name "上位コード"
+# "当該コードの上位に位置するコードを記述するためのプロパティ用語"
+#name@en "Superior code"
+#description@en "The upper-level code of the code concerned."
+property ic:上位コード {@ic:コード型} ;
+
+
+#name "下位コード"
+# "当該コードの下位に位置するコードを記述するためのプロパティ用語"
+#name@en "Inferior code"
+#description@en "The lower-level code of the code concerned."
+property ic:下位コード {@ic:コード型} ;
+
+
+#name "関連コード"
+# "当該コードに関連するコードを記述するためのプロパティ用語"
+#name@en "Related code"
+#description@en "The code related to the code concerned."
+property ic:関連コード {@ic:コード型} ;
+
+
+#name "日時"
+# "活動などが行われる日時を記述するためのプロパティ用語"
+#name@en "Date and time"
+#description@en "The date and time when an activity, etc. are held."
+property ic:日時 {@ic:日時型} ;
+
+
+#name "関連人員"
+# "関連する人員の人数（従業員数など）を記述するためのプロパティ用語"
+#name@en "Number of associated person"
+#description@en "The number of personnel involved (such as the number of employees)."
+property ic:関連人員 {@ic:人数型} ;
+
+
+#name "面積"
+# "土地などの面積を記述するためのプロパティ用語"
+#name@en "Areasquare"
+#description@en "The area of a land, etc."
+property ic:面積 {@ic:面積型} ;
+
+
+#name "活動"
+# "組織などの活動を記述するためのプロパティ用語"
+#name@en "Activity"
+#description@en "The activity of an organization, etc."
+property ic:活動 {@ic:活動型} ;
+
+
+#name "提供者"
+# "サービス等を提供する組織や人を記述するためのプロパティ用語"
+#name@en "Provider"
+#description@en "The entity such as an organization or person that provide a service, etc."
+property ic:提供者 {@ic:実体型} ;
+
+
+#name "参照先"
+# "追加情報などを参照するURLを記述するためのプロパティ用語"
+#name@en "Referenced object"
+#description@en "The URL that refers to additional information."
+property ic:参照先 {@xsd:anyURI} ;
+
+
+#name "表題"
+# "文書に与えられた名前を記述するためのプロパティ用語"
+#name@en "Title of document"
+#description@en "The name given to a document."
+property ic:表題 {@xsd:string} ;
+
+
+#name "作成者"
+# "文書の内容の作成に主たる責任をもつ実体を記述するためのプロパティ用語"
+#name@en "Creator"
+#description@en "The entity primarily responsible for making a document."
+property ic:作成者 {@ic:実体型} ;
+
+
+#name "寄与者"
+# "文書の内容になんらかの寄与、貢献をした実体を記述するためのプロパティ用語"
+#name@en "Contributor"
+#description@en "The entity responsible for making contributions to a document."
+property ic:寄与者 {@ic:実体型} ;
+
+
+#name "日付"
+# "文書のライフサイクルにおけるなんらかの事象に関するある時点又は時間的区間を記述するためのプロパティ用語"
+#name@en "Date"
+#description@en "The point or period of time associated with an event in the lifecycle of a document."
+property ic:日付 {@ic:日付型} ;
+
+
+#name "資源タイプ"
+# "文書の性質又はジャンルを記述するためのプロパティ用語"
+#name@en "Type"
+#description@en "The nature or genre of a document."
+property ic:資源タイプ {@xsd:anyURI} ;
+
+
+#name "記録形式"
+# "文書のファイルの記録形式、物理媒体又は次元を記述するためのプロパティ用語"
+#name@en "Format"
+#description@en "The file format, physical medium, or dimensions of a document."
+property ic:記録形式 {@xsd:string} ;
+
+
+#name "記録形式コード"
+# "文書のファイルの記録形式、物理媒体又は次元のコードを記述するためのプロパティ用語"
+#name@en "Format code"
+#description@en "The code specifying a file format, physical medium, or dimensions of a document."
+property ic:記録形式コード {@ic:コード型} ;
+
+
+#name "出処"
+# "当該文書の由来となるような関係の文書源を記述するためのプロパティ用語"
+#name@en "Source"
+#description@en "The related document from which a described document is derived."
+property ic:出処 {@xsd:string} ;
+
+
+#name "言語"
+# "文書の言語を記述するためのプロパティ用語"
+#name@en "Language"
+#description@en "The language of a document."
+property ic:言語 {@ic:コード型} ;
+
+
+#name "権利管理"
+# "文書に含まれる、又はかかわる権利管理に関する情報を記述するためのプロパティ用語"
+#name@en "Rights"
+#description@en "The information about rights held in and over a document."
+property ic:権利管理 {@ic:文書型} ;
+
+
+#name "利用対象"
+# "利用対象となる事物を記述するためのプロパティ用語"
+#name@en "Thing to be targeted"
+#description@en "The thing to be targeted for a service, etc."
+property ic:利用対象 {@ic:対象型} ;
+
+
+#name "利用方法"
+# "利用方法を記述するためのプロパティ用語"
+#name@en "Procedure for use"
+#description@en "The procedure to use a service, etc."
+property ic:利用方法 {@xsd:string} ;
+
+
+#name "制約"
+# "対象となる事物の制約を記述するためのプロパティ用語"
+#name@en "Restriction"
+#description@en "The restriction on a thing to be targeted."
+property ic:制約 {@ic:制約型} ;
+
+
+#name "制約コード"
+# "制約コードを記述するためのプロパティ用語"
+#name@en "Restriction code"
+#description@en "The code specifying a restriction."
+property ic:制約コード {@ic:コード型} ;
+
+
+#name "制約対象"
+# "制約対象を記述するためのプロパティ用語"
+#name@en "Thing to be restricted"
+#description@en "The targeted thing to be restricted."
+property ic:制約対象 {@xsd:string} ;
+
+
+#name "上限値"
+# "範囲制約の上限値を記述するためのプロパティ用語"
+#name@en "Upper limit"
+#description@en "The upper limit of the range of a restriction."
+property ic:上限値 {@ic:数量型} ;
+
+
+#name "境界を含まない上限値"
+# "範囲制約の境界を含まない上限値を記述するためのプロパティ用語"
+#name@en "Upper limit not including boundary"
+#description@en "The upper limit of the range of s restriction, which excludes the boundary."
+property ic:境界を含まない上限値 {@ic:数量型} ;
+
+
+#name "下限値"
+# "範囲制約の下限値を記述するためのプロパティ用語"
+#name@en "Lower limit"
+#description@en "The lower limit of the range of a restriction."
+property ic:下限値 {@ic:数量型} ;
+
+
+#name "境界を含まない下限値"
+# "範囲制約の境界を含まない下限値を記述するためのプロパティ用語"
+#name@en "Lower limit not including boundary"
+#description@en "The lower limit of the range of a restriction, which excludes the boundary."
+property ic:境界を含まない下限値 {@ic:数量型} ;
+
+
+#name "年齢"
+# "人の年齢を記述するためのプロパティ用語"
+#name@en "Age"
+#description@en "An age of the person."
+property ic:年齢 {@ic:数量型} ;
+
+
+#name "身長"
+# "人の身長を記述するためのプロパティ用語"
+#name@en "Height of perseon"
+#description@en "A height of the person."
+property ic:身長 {@ic:数量型} ;
+
+
+#name "体重"
+# "人の体重を記述するためのプロパティ用語"
+#name@en "Weight of person"
+#description@en "A weight of the person."
+property ic:体重 {@ic:数量型} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "メタデータ"
+# "データのメタデータを記述するためのプロパティ用語"
+#name@en "Metadata"
+#description@en "A document specifying the metadata of a data."
+property ic:メタデータ {@ic:文書型} ;
+
+
+// 2.4.1 にて追加,  2017-10-19
+#name "記述"
+# "種別付きの説明文を記述するためのプロパティ用語"
+#name@en "Explanation"
+#description@en "A explanation for the thing."
+property ic:記述 {@ic:記述型} ;

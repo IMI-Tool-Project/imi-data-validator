@@ -1,0 +1,12 @@
+#prefix ic: "http://imi.go.jp/ns/core/2#"
+datamodel;
+use ic:法人型>ic:表記{1..1};
+use ic:法人型>ic:組織種別{0..1};
+use ic:法人型>ic:組織種別>ic:識別値{1..1};
+use ic:法人型>ic:組織種別>ic:表記{1..1};
+use ic:法人型>ic:組織種別位置{0..1};
+use ic:法人型>ic:住所{0..1};
+use ic:法人型>ic:住所>ic:表記{1..1};
+use ic:法人型>ic:住所>ic:都道府県{0..1};
+use ic:法人型>ic:住所>ic:市区町村{0..1};
+use ic:法人型>ic:住所>ic:郵便番号{0..1}{$"https://imi.go.jp/CommonCharacterSets/ISOIEC10646Annex-G-supplement-NUMERIC-compliant"};
