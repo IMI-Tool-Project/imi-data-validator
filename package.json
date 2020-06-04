@@ -22,7 +22,7 @@
     "mocha": "^6.2.3"
   },
   "dependencies": {
-    "imi-moji-converter": "file:../imi-moji-converter-1.0.0.tgz",
+    "imi-moji-converter": "github:IMI-Tool-Project/imi-moji-converter",
     "imiv-parser": "^1.0.1"
   },
   "repository": {
