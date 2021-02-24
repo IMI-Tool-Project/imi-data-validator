@@ -11,25 +11,12 @@
 ## インストール
 
 適当な作業フォルダを作成しモジュールをインストールします。
-ここでは ${SOMEWHERE} フォルダに imi-moji-converter-1.0.0.tgz と imi-data-validator-1.0.0.tgz が
-あることを仮定しています。
 
 ```
-$ ls ${SOMEWHERE}
-imi-moji-converter-1.0.0.tgz
-imi-data-validator-1.0.0.tgz
-
 $ mkdir work
 $ cd work
-$ cp ${SOMEWHERE}/imi-moji-converter-1.0.0.tgz .
-$ cp ${SOMEWHERE}/imi-data-validator-1.0.0.tgz .
-$ npm install ./imi-data-validator-1.0.0.tgz
+$ npm install IMI-Tool-Project/imi-data-validator
 ```
-
-なお、imi-data-validator はローカルパッケージ imi-moji-converter に依存しています。
-imi-data-validator-1.0.0.tgz をインストールする際には
-imi-data-validator-1.0.0.tgz と imi-moji-converter-1.0.0.tgz は同じフォルダに配置されている必要があります。
-
 
 ## API
 
@@ -249,22 +236,11 @@ $
 
 以下の手順で環境を構築します。
 
-ここでは ${SOMEWHERE} フォルダに依存ライブラリである imi-moji-converter-1.0.0.tgz とソースアーカイブ imi-data-validator-1.0.0.src.tgz が
-あることを仮定しています。
-
 ```
-$ cd work
-$ cp ${SOMEWHERE}/imi-moji-converter-1.0.0.tgz .
-$ mkdir imi-data-validator
+$ git clone https://github.com/IMI-Tool-Project/imi-data-validator.git
 $ cd imi-data-validator
-$ tar xvzf ${SOMEWHERE}/imi-data-validator-1.0.0.src.tgz
 $ npm install
 ```
-
-なお、imi-data-validator はローカルパッケージ imi-moji-converter に依存しています。
-imi-data-validator-1.0.0.src.tgz の展開後、 `npm install` を実行して
-依存ライブラリをインストールする際には imi-moji-converter-1.0.0.tgz が
-imi-data-validator フォルダと同じ階層に配置されている必要があります。
 
 ## テスト
 
@@ -299,7 +275,7 @@ $
 
 ## ファイル構成
 
-開発対象となる Javascript は以下の３つです。
+開発対象となる JavaScript は以下の３つです。
 
 ```
 main.js : 関数本体
